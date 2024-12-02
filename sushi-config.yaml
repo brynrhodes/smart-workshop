@@ -1,28 +1,31 @@
-id: smart.who.int.ig-empty
-canonical: http://smart.who.int/ig-empty
-name: IGEmpty
-title: Empty IG
-description: An empty Implementation Guide to be used as a starting point for building SMART Guidelines Implementation Guides
+# ╭─────────────────────────Commonly Used ImplementationGuide Properties───────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. The most commonly   │
+# │  used properties are included. For a list of all supported properties and their functions,     │
+# │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: smart.who.int.example-workshop
+canonical: http://smart.who.int/example-workshop
+name: ExampleWorkshop
+title: WHO SMART Guidelines - Example Workshop IG
+description: WHO SMART Guidelines - Example Workshop IG based on Measles Immunization (Demonstration of authoring process)
 status: draft # draft | active | retired | unknown
-experimental: false
+experimental: true
 version: 0.1.0
 fhirVersion: 4.0.1 # https://www.hl7.org/fhir/valueset-FHIR-version.html
-#fhirVersion: 4.3.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
-license: CC-BY-SA-3.0-IGO # https://www.hl7.org/fhir/valueset-spdx-license.html
-jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+license: CC-BY-SA-3.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
+# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
   name: WHO
   url: http://who.int
   # email: test@example.org
 
+# The dependencies property corresponds to IG.dependsOn. The key is the
+# package id and the value is the version (or dev/current). For advanced
+# use cases, the value can be an object with keys for id, uri, and version.
+#
 dependencies:
-#  hl7.fhir.core:
-#    id: r4b
-#    version: 4.6.0
-#    reason: |
-#      This IG leverages subscription constructs pre-adopted from R4B.  Importing this IG makes the relevant terminologies available.
   # NOTE: These dependencies are required because SUSHI doesn't load transitive dependencies
   # See the zulip thread here: https://chat.fhir.org/#narrow/stream/215610-shorthand/search/transitive
   hl7.terminology: 5.5.0
@@ -30,22 +33,15 @@ dependencies:
   hl7.fhir.uv.cql: 1.0.0
   hl7.fhir.uv.crmi: 1.0.0
   hl7.fhir.uv.sdc: 3.0.0
-  hl7.fhir.uv.cpg: 2.0.0
-  hl7.fhir.us.cqfmeasures: 5.0.0
+  hl7.fhir.uv.cpg: 5.0.0
+  hl7.fhir.us.cqfmeasures: 2.0.0
   # Actual dependencies
-  smart.who.int.base:
-    id: sb
-    version: 0.1.0
-    reason: This IG uses SMART base computable guideline capabilities
-  smart.who.int.base-clinical:
-    id: sbc
-    version: dev
-    reason: This IG uses SMART base clinical capabilities
+  fhir.cqf.common: 4.0.1
+  smart.who.int.base: dev
+  smart.who.int.base-clinical: dev
 
-meta:
-  profile:
-    - http://smart.who.int/base/StructureDefinition/SGImplementationGuide
-
+#
+#
 pages:
   index.md:
     title: Home
@@ -87,14 +83,15 @@ pages:
       title: Sequence Diagrams
     transactions.md:
       title: Transactions
-#    logical-models.md:                                                                                                                                                   
-#      title: Logical Models                                                                                                                                              
+#    logical-models.md:
+#      title: Logical Models
     indicators-measures.md:
       title: Indicators and Measures
-#    profiles.xml:                                                                                                                                                        
-#      title: Content profiles 
+#    profiles.xml:
+#      title: Content profiles
     codings.md:
       title: Codings
+
   deployment.md:
     title: Deployment
     security-privacy.md:
@@ -105,8 +102,6 @@ pages:
       title: Test Data
     reference-implementations.md: 
       title: Reference Implementations
-    trust_domain.md:
-      title: Trust Domains
     downloads.md: 
       title: Downloads
   indices.md:
@@ -116,7 +111,29 @@ pages:
     maps.md: 
       title: Mappings
 
-
+#
+#
+# The parameters property represents IG.definition.parameter. Rather
+# than a list of code/value pairs (as in the ImplementationGuide
+# resource), the code is the YAML key. If a parameter allows repeating
+# values, the value in the YAML should be a sequence/array.
+# For parameters defined by core FHIR see:
+# http://build.fhir.org/codesystem-guide-parameter-code.html
+# For parameters defined by the FHIR Tools IG see:
+# http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
+#
+# parameters:
+#   excludettl: true
+#   validation: [allow-any-extensions, no-broken-links]
+#
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │ The menu property will be used to generate the input/menu.xml file. The menu is represented    │
+# │ as a simple structure where the YAML key is the menu item name and the value is the URL.       │
+# │ The IG publisher currently only supports one level deep on sub-menus. To provide a             │
+# │ custom menu.xml file, do not include this property and include a `menu.xml` file in            │
+# │ input/includes. To use a provided input/includes/menu.xml file, delete the "menu"              │
+# │ property below.                                                                                │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: 
     Summary: index.html
@@ -146,13 +163,19 @@ menu:
     Testing: testing.html
     Test Data: test-data.html
     Reference Implementations: reference-implementations.html
-    Trust Domains: trust_domain.html
     Downloads: downloads.html
 
   Indices:
     Artifact Index: artifacts.html
     Mappings: maps.html
-    
+
+meta:
+  profile:
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-shareableimplementationguide
+    - http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableimplementationguide
+    - http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-computableguideline
+#    - http://smart.who.int/smart-base/ImplementationGuide-SGImplementationGuide
+
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
 # │  Uncomment the properties below to configure additional properties on the ImplementationGuide  │
 # │  resource. These properties are less commonly needed than those above.                         │
@@ -282,3 +305,21 @@ menu:
 #   if InstanceOf references a profile:
 #
 #   setId: always # always | standalone-only
+
+parameters:
+  produce-jekyll-data: true
+  path-expansion-params:
+    - ../../input/_resources/exp-params.json
+  path-resource: 
+    - input/actors
+    - input/maps
+  path-binary:
+    - input/cql
+  special-url:
+    - http://id.who.int/icd/release/11/mms
+    - http://hl7.org/fhir/ValueSet/immunization-status
+    - http://hl7.org/fhir/ValueSet/country
+    - http://smart.who.int/base-clinical/Library/WHOCommon
+    - http://smart.who.int/base-clinical/Library/WHOConcepts
+    - http://smart.who.int/base-clinical/Library/WHOElements
+    - http://smart.who.int/base-clinical/Library/WHOEncounterElements
