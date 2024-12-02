@@ -7,7 +7,7 @@
 ![QA hints](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fbrynrhodes.github.io%2Fsmart-workshop%2Fqa.json&query=%24.hints&logoColor=yellow&label=QA%20hints&color=yellow)
 
 
-# WHO SMART GUIDELINES - Example IG 
+# WHO SMART GUIDELINES - Workshop Example IG 
 
 CI-Build: https://brynrhodes.github.io/smart-workshop/
 
