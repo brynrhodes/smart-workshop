@@ -1,0 +1,31 @@
+ExampleWorkshop
+=========================================
+
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 9168, Warning - Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 9595, Warning - Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 10016, Warning - Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 10370, Warning - Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 10879, Warning - Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json: line 1, col 11388, Warning - Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked (NOTFOUND)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json: line 1, col 9871, Info - Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json: line 1, col 10441, Info - Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json: line 1, col 11011, Info - Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json: line 1, col 11351, Info - Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json: line 1, col 11758, Info - Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 12927, Info - Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 13350, Info - Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 13856, Info - Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 14429, Info - Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 14946, Info - Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json: line 1, col 15530, Info - Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons (BUSINESSRULE)
+/github/workspace/fsh-generated/resources/ValueSet-AllVaccineTypes.json: line 1, col 2802, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-AllVaccineTypes.json: line 1, col 2900, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-AllVaccineTypes.json: line 1, col 3009, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-HIVstatus-values.json: line 1, col 2431, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-IMMZ.Z.DE9.json: line 1, col 3303, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-LiveAttenuatedVaccines.json: line 1, col 4694, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-VaccineTypes.json: line 1, col 2617, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+/github/workspace/fsh-generated/resources/ValueSet-VaccineTypes.json: line 1, col 2715, Info - The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment' (INVALID)
+
+err = 0, warn = 6, info = 19
+IG Publisher Version: 1.7.5

@@ -1,0 +1,19 @@
+{
+  "url" : "http://smart.who.int/example-workshop/ImplementationGuide/smart.who.int.example-workshop",
+  "name" : "ExampleWorkshop",
+  "title" : "WHO SMART Guidelines - Example Workshop IG",
+  "description" : "WHO SMART Guidelines - Example Workshop IG based on Measles Immunization (Demonstration of authoring process)",
+  "status" : "draft",
+  "package-id" : "smart.who.int.example-workshop",
+  "ig-ver" : "0.1.0",
+  "date" : "Mon, 02 Dec, 2024 20:06:43 +0000",
+  "dateISO8601" : "2024-12-02T20:06:43+00:00",
+  "errs" : 3,
+  "warnings" : 17,
+  "hints" : 79,
+  "suppressed-hints" : 0,
+  "suppressed-warnings" : 0,
+  "version" : "4.0.1",
+  "tool" : "5.0.0 (3)",
+  "maxMemory" : 3367160392
+}

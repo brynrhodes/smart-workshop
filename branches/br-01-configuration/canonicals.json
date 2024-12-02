@@ -1,0 +1,9 @@
+[
+  {
+    "id" : "smart.who.int.example-workshop",
+    "type" : "ImplementationGuide",
+    "url" : "http://smart.who.int/example-workshop/ImplementationGuide/smart.who.int.example-workshop",
+    "version" : "0.1.0",
+    "name" : "ExampleWorkshop"
+  }
+]

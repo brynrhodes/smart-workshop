@@ -1,0 +1,249 @@
+ExampleWorkshop : Validation Results
+=========================================
+
+err = 3, warn = 19, info = 94
+$--
+Generated $--. FHIR version $-- for smart.who.int.example-workshop#$-- (canonical = http://smart.who.int/example-workshop)
+ Build Errors : 0 / 0 / 0
+ /github/workspace/fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesCIMR : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesEval : 0 / 0 / 1
+ /github/workspace/fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesMR : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/CodeSystem-ICD11 : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/CodeSystem-IMMZConcepts : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/CodeSystem-VaccineProducts : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToAdministrativeGender : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToICD11 : 0 / 6 / 4
+ /github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC : 0 / 0 / 9
+ /github/workspace/fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED : 0 / 0 / 10
+ /github/workspace/fsh-generated/resources/ImplementationGuide-smart.who.int.example-workshop : 0 / 0 / 4
+ /github/workspace/fsh-generated/resources/Library-IMMZCommon : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZConcepts : 2 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZConfig : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD2DTMeaslesDose0Logic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD2DTMeaslesLTLogic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD2DTMeaslesLogic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD2DTMeaslesOTLogic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD2DTMeaslesSupplementaryLogic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZD5DTMeaslesCILogic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZElements : 0 / 2 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZEncounterElements : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZIND08Logic : 0 / 1 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZIND12Logic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZIND13Logic : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZIndicatorElements : 0 / 1 / 11
+ /github/workspace/fsh-generated/resources/Library-IMMZVaccineLibrary : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-WHOCommon : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-WHOConcepts : 1 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-WHOElements : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/Library-WHOEncounterElements : 0 / 0 / 11
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesDose0 : 0 / 0 / 9
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesLT : 0 / 0 / 8
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesOT : 0 / 0 / 8
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesSupplementary : 0 / 0 / 8
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZD5DTMeaslesCI : 0 / 0 / 10
+ /github/workspace/fsh-generated/resources/PlanDefinition-IMMZDTImmunizationStrategy : 0 / 0 / 8
+ /github/workspace/fsh-generated/resources/StructureDefinition-SGImmunization : 0 / 1 / 4
+ /github/workspace/fsh-generated/resources/StructureDefinition-SGMedicationClassification : 0 / 1 / 1
+ /github/workspace/fsh-generated/resources/StructureDefinition-SGVaccineProduct : 0 / 1 / 4
+ /github/workspace/fsh-generated/resources/StructureDefinition-SGVaccineProposal : 0 / 1 / 4
+ /github/workspace/fsh-generated/resources/StructureDefinition-SGVaccineRequest : 0 / 1 / 4
+ /github/workspace/fsh-generated/resources/StructureDefinition-sg-ext-administeredProduct : 0 / 2 / 1
+ /github/workspace/fsh-generated/resources/ValueSet-ARVDrugs-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-AllVaccineTypes : 0 / 0 / 9
+ /github/workspace/fsh-generated/resources/ValueSet-Birthweight-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-HIVstatus-values : 0 / 0 / 7
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.C.DE5 : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.D1.DE10 : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.D1.DE1VS : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.D1.DE5VS : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.D4.DE161 : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-IMMZ.Z.DE9 : 0 / 0 / 7
+ /github/workspace/fsh-generated/resources/ValueSet-Immunocompromised-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-LiveAttenuatedVaccines : 0 / 0 / 7
+ /github/workspace/fsh-generated/resources/ValueSet-Negativetestresult-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-PositiveTestResult-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-SGImmunizationStatusCodes : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-VSMeaslesVaccineProducts : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-VaccineTypes : 0 / 0 / 8
+ /github/workspace/fsh-generated/resources/ValueSet-pregnancystatus-values : 0 / 0 / 6
+ /github/workspace/fsh-generated/resources/ValueSet-sgcountry : 0 / 0 / 6
+</table>
+== n/a ==
+== fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesCIMR.json ==
+WARNING: ActivityDefinition/IMMZD2DTMeaslesCIMR: ActivityDefinition.product.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://id.who.int/icd/release/11/mms' could not be found, so the code cannot be validated
+== fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesEval.json ==
+== fsh-generated/resources/ActivityDefinition-IMMZD2DTMeaslesMR.json ==
+WARNING: ActivityDefinition/IMMZD2DTMeaslesMR: ActivityDefinition.product.ofType(CodeableConcept).coding[0].system: A definition for CodeSystem 'http://id.who.int/icd/release/11/mms' could not be found, so the code cannot be validated
+== fsh-generated/resources/CodeSystem-ICD11.json ==
+== fsh-generated/resources/CodeSystem-IMMZConcepts.json ==
+== fsh-generated/resources/CodeSystem-VaccineProducts.json ==
+== fsh-generated/resources/ConceptMap-IMMZConceptsToAdministrativeGender.json ==
+== fsh-generated/resources/ConceptMap-IMMZConceptsToICD11.json ==
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[0].target: Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[1].source: Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[2].target: Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[3].source: Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[4].target: Target Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the target codes cannot be checked
+WARNING: ConceptMap/IMMZConceptsToICD11: ConceptMap.group[5].source: Source Code System http://id.who.int/icd/release/11/mms doesn't have all content (content = fragment), so the source codes cannot be checked
+== fsh-generated/resources/ConceptMap-IMMZConceptsToLOINC.json ==
+INFORMATION: ConceptMap/IMMZConceptsToLOINC: ConceptMap.group[0].target: Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToLOINC: ConceptMap.group[1].target: Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToLOINC: ConceptMap.group[2].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToLOINC: ConceptMap.group[3].target: Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToLOINC: ConceptMap.group[4].source: Source Code System http://loinc.org is only supported on the terminology server, so the source codes are not validated for performance reasons
+== fsh-generated/resources/ConceptMap-IMMZConceptsToSNOMED.json ==
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[0].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[1].source: Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[2].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[3].source: Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[4].target: Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+INFORMATION: ConceptMap/IMMZConceptsToSNOMED: ConceptMap.group[5].source: Source Code System http://snomed.info/sct is only supported on the terminology server, so the source codes are not validated for performance reasons
+== fsh-generated/resources/ImplementationGuide-smart.who.int.example-workshop.json ==
+== fsh-generated/resources/Library-IMMZCommon.json ==
+INFORMATION: Library/IMMZCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZConcepts.json ==
+ERROR: Library/IMMZConcepts: Library.relatedArtifact[4].resource: Canonical URL 'http://hl7.org/fhir/sid/ciel' does not resolve
+ERROR: Library/IMMZConcepts: Library.relatedArtifact[9].resource: Canonical URL 'http://hl7.org/fhir/uv/ips/ValueSet/whoatc-uv-ips' does not resolve
+INFORMATION: Library/IMMZConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZConfig.json ==
+INFORMATION: Library/IMMZConfig: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZConfig: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZConfig: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD2DTMeaslesDose0Logic.json ==
+INFORMATION: Library/IMMZD2DTMeaslesDose0Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesDose0Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesDose0Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD2DTMeaslesLTLogic.json ==
+INFORMATION: Library/IMMZD2DTMeaslesLTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesLTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesLTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD2DTMeaslesLogic.json ==
+INFORMATION: Library/IMMZD2DTMeaslesLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD2DTMeaslesOTLogic.json ==
+INFORMATION: Library/IMMZD2DTMeaslesOTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesOTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesOTLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD2DTMeaslesSupplementaryLogic.json ==
+INFORMATION: Library/IMMZD2DTMeaslesSupplementaryLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesSupplementaryLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD2DTMeaslesSupplementaryLogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZD5DTMeaslesCILogic.json ==
+INFORMATION: Library/IMMZD5DTMeaslesCILogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD5DTMeaslesCILogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZD5DTMeaslesCILogic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZElements.json ==
+WARNING: IMMZElements.cql: Result type choice<FHIR.Quantity,FHIR.CodeableConcept,FHIR.string,FHIR.boolean,FHIR.integer,FHIR.Range,FHIR.Ratio,FHIR.SampledData,FHIR.time,FHIR.dateTime,FHIR.Period> of definition Patient Mother's Pregnancy Outcome Observation Value is not supported; implementations may not be able to use the result of this expression
+WARNING: IMMZElements.cql: Result type choice<FHIR.Quantity,FHIR.CodeableConcept,FHIR.string,FHIR.boolean,FHIR.integer,FHIR.Range,FHIR.Ratio,FHIR.SampledData,FHIR.time,FHIR.dateTime,FHIR.Period> of definition Preterm is not supported; implementations may not be able to use the result of this expression
+INFORMATION: Library/IMMZElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZEncounterElements.json ==
+INFORMATION: Library/IMMZEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZIND08Logic.json ==
+WARNING: IMMZIND08Logic.cql: Result type List of choice<FHIR.positiveInt,FHIR.string> of definition Dose Sequence Stratifier is not supported; implementations may not be able to use the result of this expression
+INFORMATION: Library/IMMZIND08Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND08Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND08Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZIND12Logic.json ==
+INFORMATION: Library/IMMZIND12Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND12Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND12Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZIND13Logic.json ==
+INFORMATION: Library/IMMZIND13Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND13Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIND13Logic: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZIndicatorElements.json ==
+WARNING: IMMZIndicatorElements.cql: Result type List of tuple of immunization: Immunization, adverseEvent: Observation of definition Immunizations And Adverse Events During Measurement Period is not supported; implementations may not be able to use the result of this expression
+INFORMATION: Library/IMMZIndicatorElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIndicatorElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZIndicatorElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-IMMZVaccineLibrary.json ==
+INFORMATION: Library/IMMZVaccineLibrary: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZVaccineLibrary: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/IMMZVaccineLibrary: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-WHOCommon.json ==
+INFORMATION: Library/WHOCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOCommon: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-WHOConcepts.json ==
+ERROR: Library/WHOConcepts: Library.relatedArtifact[4].resource: Canonical URL 'http://hl7.org/fhir/sid/ciel' does not resolve
+INFORMATION: Library/WHOConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOConcepts: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-WHOElements.json ==
+INFORMATION: Library/WHOElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/Library-WHOEncounterElements.json ==
+INFORMATION: Library/WHOEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishablelibrary|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-library|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Library/WHOEncounterElements: Library.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cql/StructureDefinition/cql-module|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesDose0.json ==
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesDose0: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesDose0: PlanDefinition.action[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesDose0: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesLT.json ==
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesLT: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesLT: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesOT.json ==
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesOT: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesOT: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZD2DTMeaslesSupplementary.json ==
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesSupplementary: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD2DTMeaslesSupplementary: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZD5DTMeaslesCI.json ==
+INFORMATION: PlanDefinition/IMMZD5DTMeaslesCI: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD5DTMeaslesCI: PlanDefinition.action[0].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD5DTMeaslesCI: PlanDefinition.action[1].extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-recommendationdefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZD5DTMeaslesCI: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/PlanDefinition-IMMZDTImmunizationStrategy.json ==
+INFORMATION: PlanDefinition/IMMZDTImmunizationStrategy: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/cpg/StructureDefinition/cpg-strategydefinition|2.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: PlanDefinition/IMMZDTImmunizationStrategy: PlanDefinition.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-publishableplandefinition|1.0.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+== fsh-generated/resources/StructureDefinition-SGImmunization.json ==
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/SGImmunization'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-SGMedicationClassification.json ==
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/SGMedicationClassification'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/StructureDefinition-SGVaccineProduct.json ==
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/SGVaccineProduct'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-SGVaccineProposal.json ==
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/SGVaccineProposal'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-SGVaccineRequest.json ==
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/SGVaccineRequest'): The Implementation Guide contains no examples for this profile
+== fsh-generated/resources/StructureDefinition-sg-ext-administeredProduct.json ==
+WARNING: StructureDefinition/sg-ext-administeredProduct: StructureDefinition.context[0]: Review the extension type for sg-ext-administeredProduct: extensions should not have a context of Element unless it's really intended that they can be used anywhere
+WARNING: StructureDefinition.where(url = 'http://smart.who.int/example-workshop/StructureDefinition/sg-ext-administeredProduct'): The Implementation Guide contains no examples for this extension
+== fsh-generated/resources/ValueSet-ARVDrugs-values.json ==
+== fsh-generated/resources/ValueSet-AllVaccineTypes.json ==
+INFORMATION: ValueSet/AllVaccineTypes: ValueSet.compose.include[0]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+INFORMATION: ValueSet/AllVaccineTypes: ValueSet.compose.include[1]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+INFORMATION: ValueSet/AllVaccineTypes: ValueSet.compose.include[2]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+== fsh-generated/resources/ValueSet-Birthweight-values.json ==
+== fsh-generated/resources/ValueSet-HIVstatus-values.json ==
+INFORMATION: ValueSet/HIVstatus-values: ValueSet.compose.include[1]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+== fsh-generated/resources/ValueSet-IMMZ.C.DE5.json ==
+== fsh-generated/resources/ValueSet-IMMZ.D1.DE10.json ==
+== fsh-generated/resources/ValueSet-IMMZ.D1.DE1VS.json ==
+== fsh-generated/resources/ValueSet-IMMZ.D1.DE5VS.json ==
+== fsh-generated/resources/ValueSet-IMMZ.D4.DE161.json ==
+== fsh-generated/resources/ValueSet-IMMZ.Z.DE9.json ==
+INFORMATION: ValueSet/IMMZ.Z.DE9: ValueSet.compose.include[0]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+== fsh-generated/resources/ValueSet-Immunocompromised-values.json ==
+== fsh-generated/resources/ValueSet-LiveAttenuatedVaccines.json ==
+INFORMATION: ValueSet/LiveAttenuatedVaccines: ValueSet.compose.include[0]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+== fsh-generated/resources/ValueSet-Negativetestresult-values.json ==
+== fsh-generated/resources/ValueSet-PositiveTestResult-values.json ==
+== fsh-generated/resources/ValueSet-SGImmunizationStatusCodes.json ==
+== fsh-generated/resources/ValueSet-VSMeaslesVaccineProducts.json ==
+== fsh-generated/resources/ValueSet-VaccineTypes.json ==
+INFORMATION: ValueSet/VaccineTypes: ValueSet.compose.include[0]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+INFORMATION: ValueSet/VaccineTypes: ValueSet.compose.include[1]: The value set references CodeSystem 'http://id.who.int/icd/release/11/mms' which has status 'fragment'
+== fsh-generated/resources/ValueSet-pregnancystatus-values.json ==
+== fsh-generated/resources/ValueSet-sgcountry.json ==

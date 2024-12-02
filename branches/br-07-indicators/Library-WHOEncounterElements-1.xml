@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="24">
+         <a:s>library WHOEncounterElements</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="WHOEncounterElements" system="http://smart.who.int/example-workshop"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://hl7.org/fhir/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:31" localIdentifier="Common" path="http://smart.who.int/example-workshop/WHOCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>WHOCommon</a:s>
+               </a:s>
+               <a:s> called Common</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:35" localIdentifier="Elements" path="http://smart.who.int/example-workshop/WHOElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>WHOElements</a:s>
+               </a:s>
+               <a:s> called Elements</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="7" locator="10:1-10:35" name="AsOf" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>parameter AsOf </a:s>
+               <a:s r="6">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="5">
+                  <a:s>Today()</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="5" locator="10:29-10:35" xsi:type="Today"/>
+         <parameterTypeSpecifier localId="6" locator="10:16-10:19" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def localId="9" locator="11:1-11:28" name="EncounterId" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="9">
+               <a:s>parameter EncounterId </a:s>
+               <a:s r="8">
+                  <a:s>String</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <parameterTypeSpecifier localId="8" locator="11:23-11:28" name="t:String" xsi:type="NamedTypeSpecifier"/>
+      </def>
+   </parameters>
+   <contexts>
+      <def locator="13:1-13:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="13:1-13:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="13:1-13:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="24" locator="15:1-18:74" name="Pregnant Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="24">
+               <a:s>define &quot;Pregnant Observation&quot;:
+  </a:s>
+               <a:s r="23">
+                  <a:s>
+                     <a:s r="11">
+                        <a:s r="10">
+                           <a:s>
+                              <a:s>Elements.&quot;Pregnant Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="22">
+                     <a:s>where </a:s>
+                     <a:s r="22">
+                        <a:s r="15">
+                           <a:s r="13">
+                              <a:s r="12">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="13">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="15">
+                              <a:s>references(</a:s>
+                              <a:s r="14">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="21">
+                           <a:s r="18">
+                              <a:s r="17">
+                                 <a:s r="16">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="17">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="18">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="21">
+                              <a:s>starts </a:s>
+                              <a:s r="20">
+                                 <a:s>9 months</a:s>
+                              </a:s>
+                              <a:s> on or before day of</a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="19">
+                              <a:s>AsOf</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="23" locator="16:3-18:74" xsi:type="Query">
+            <source localId="11" locator="16:3-16:35" alias="O">
+               <expression localId="10" locator="16:3-16:33" name="Pregnant Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="22" locator="17:5-18:74" xsi:type="Or">
+               <operand localId="15" locator="17:11-17:45" name="references" libraryName="Common" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="13" locator="17:11-17:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="14" locator="17:34-17:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="21" locator="18:10-18:74" precision="Day" xsi:type="SameAs">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="18:35-18:40" xsi:type="Start">
+                     <operand localId="18" locator="18:10-18:33" name="toInterval" libraryName="Common" xsi:type="FunctionRef">
+                        <operand localId="17" locator="18:10-18:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand locator="18:71-18:74" xsi:type="Subtract">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="19" locator="18:71-18:74" name="AsOf" xsi:type="ParameterRef"/>
+                        <operand localId="20" locator="18:42-18:49" value="9" unit="months" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+   </statements>
+</library>

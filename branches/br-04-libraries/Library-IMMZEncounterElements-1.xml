@@ -1,0 +1,3310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:qdm43="urn:healthit-gov:qdm:v4_3" xmlns:qdm53="urn:healthit-gov:qdm:v5_3" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <annotation translatorOptions="EnableAnnotations,EnableLocators,DisableListDemotion,DisableListPromotion" signatureLevel="Overloads" xsi:type="a:CqlToElmInfo"/>
+   <annotation xsi:type="a:Annotation">
+      <a:s r="442">
+         <a:s>library IMMZEncounterElements</a:s>
+      </a:s>
+   </annotation>
+   <identifier id="IMMZEncounterElements" system="http://smart.who.int/example-workshop"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localId="1" locator="3:1-3:26" localIdentifier="FHIR" uri="http://hl7.org/fhir" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="1">
+               <a:s>using </a:s>
+               <a:s>
+                  <a:s>FHIR</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </usings>
+   <includes>
+      <def localId="2" locator="5:1-5:35" localIdentifier="FHIRHelpers" path="http://hl7.org/fhir/FHIRHelpers" version="4.0.1">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="2">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>FHIRHelpers</a:s>
+               </a:s>
+               <a:s> version '4.0.1'</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="3" locator="7:1-7:27" localIdentifier="WC" path="http://smart.who.int/example-workshop/WHOCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="3">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>WHOCommon</a:s>
+               </a:s>
+               <a:s> called WC</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="4" locator="8:1-8:38" localIdentifier="WE" path="http://smart.who.int/example-workshop/WHOEncounterElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="4">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>WHOEncounterElements</a:s>
+               </a:s>
+               <a:s> called WE</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="5" locator="10:1-10:36" localIdentifier="Concepts" path="http://smart.who.int/example-workshop/IMMZConcepts">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="5">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>IMMZConcepts</a:s>
+               </a:s>
+               <a:s> called Concepts</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="6" locator="11:1-11:32" localIdentifier="Common" path="http://smart.who.int/example-workshop/IMMZCommon">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="6">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>IMMZCommon</a:s>
+               </a:s>
+               <a:s> called Common</a:s>
+            </a:s>
+         </annotation>
+      </def>
+      <def localId="7" locator="12:1-12:36" localIdentifier="Elements" path="http://smart.who.int/example-workshop/IMMZElements">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="7">
+               <a:s>include </a:s>
+               <a:s>
+                  <a:s>IMMZElements</a:s>
+               </a:s>
+               <a:s> called Elements</a:s>
+            </a:s>
+         </annotation>
+      </def>
+   </includes>
+   <parameters>
+      <def localId="10" locator="14:1-14:36" name="Today" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="10">
+               <a:s>parameter Today </a:s>
+               <a:s r="9">
+                  <a:s>Date</a:s>
+               </a:s>
+               <a:s> default </a:s>
+               <a:s r="8">
+                  <a:s>Today()</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <default localId="8" locator="14:30-14:36" xsi:type="Today"/>
+         <parameterTypeSpecifier localId="9" locator="14:17-14:20" name="t:Date" xsi:type="NamedTypeSpecifier"/>
+      </def>
+      <def localId="12" locator="15:1-15:28" name="EncounterId" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="12">
+               <a:s>parameter EncounterId </a:s>
+               <a:s r="11">
+                  <a:s>String</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <parameterTypeSpecifier localId="11" locator="15:23-15:28" name="t:String" xsi:type="NamedTypeSpecifier"/>
+      </def>
+   </parameters>
+   <contexts>
+      <def locator="17:1-17:15" name="Patient"/>
+   </contexts>
+   <statements>
+      <def locator="17:1-17:15" name="Patient" context="Patient">
+         <expression xsi:type="SingletonFrom">
+            <operand locator="17:1-17:15" dataType="fhir:Patient" templateId="http://hl7.org/fhir/StructureDefinition/Patient" xsi:type="Retrieve"/>
+         </expression>
+      </def>
+      <def localId="21" locator="22:1-24:56" name="MCV Dose" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="21">
+               <a:s>/*
+ * Measles elements
+ */
+define &quot;MCV Dose&quot;:
+  </a:s>
+               <a:s r="20">
+                  <a:s>
+                     <a:s r="14">
+                        <a:s r="13">
+                           <a:s>
+                              <a:s>Elements.&quot;MCV Dose&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> MCV</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="19">
+                     <a:s>where </a:s>
+                     <a:s r="19">
+                        <a:s r="17">
+                           <a:s r="16">
+                              <a:s r="15">
+                                 <a:s>MCV</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="16">
+                                 <a:s>occurrence</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="17">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="19"> on or before </a:s>
+                        <a:s r="18">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="20" locator="23:3-24:56" xsi:type="Query">
+            <source localId="14" locator="23:3-23:25" alias="MCV">
+               <expression localId="13" locator="23:3-23:21" name="MCV Dose" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="19" locator="24:5-24:56" xsi:type="SameOrBefore">
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="17" locator="24:11-24:37" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                  <operand localId="16" locator="24:11-24:24" path="occurrence" scope="MCV" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="If">
+                  <condition xsi:type="IsNull">
+                     <operand xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="18" locator="24:52-24:56" name="Today" xsi:type="ParameterRef"/>
+                     </operand>
+                  </condition>
+                  <then xsi:type="Null">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </then>
+                  <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <low xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="18" locator="24:52-24:56" name="Today" xsi:type="ParameterRef"/>
+                     </low>
+                     <high xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="18" locator="24:52-24:56" name="Today" xsi:type="ParameterRef"/>
+                     </high>
+                  </else>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="30" locator="26:1-28:56" name="MCV Primary Series Dose" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="30">
+               <a:s>define &quot;MCV Primary Series Dose&quot;:
+  </a:s>
+               <a:s r="29">
+                  <a:s>
+                     <a:s r="23">
+                        <a:s r="22">
+                           <a:s>
+                              <a:s>Elements.&quot;MCV Primary Series Dose&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> MCV</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="28">
+                     <a:s>where </a:s>
+                     <a:s r="28">
+                        <a:s r="26">
+                           <a:s r="25">
+                              <a:s r="24">
+                                 <a:s>MCV</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="25">
+                                 <a:s>occurrence</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="26">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="28"> on or before </a:s>
+                        <a:s r="27">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="29" locator="27:3-28:56" xsi:type="Query">
+            <source localId="23" locator="27:3-27:40" alias="MCV">
+               <expression localId="22" locator="27:3-27:36" name="MCV Primary Series Dose" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="28" locator="28:5-28:56" xsi:type="SameOrBefore">
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="26" locator="28:11-28:37" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                  <operand localId="25" locator="28:11-28:24" path="occurrence" scope="MCV" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="If">
+                  <condition xsi:type="IsNull">
+                     <operand xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="27" locator="28:52-28:56" name="Today" xsi:type="ParameterRef"/>
+                     </operand>
+                  </condition>
+                  <then xsi:type="Null">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </then>
+                  <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <low xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="27" locator="28:52-28:56" name="Today" xsi:type="ParameterRef"/>
+                     </low>
+                     <high xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="27" locator="28:52-28:56" name="Today" xsi:type="ParameterRef"/>
+                     </high>
+                  </else>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="39" locator="30:1-32:56" name="MCV Supplementary Dose" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="39">
+               <a:s>define &quot;MCV Supplementary Dose&quot;:
+  </a:s>
+               <a:s r="38">
+                  <a:s>
+                     <a:s r="32">
+                        <a:s r="31">
+                           <a:s>
+                              <a:s>Elements.&quot;MCV Supplementary Dose&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> MCV</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="37">
+                     <a:s>where </a:s>
+                     <a:s r="37">
+                        <a:s r="35">
+                           <a:s r="34">
+                              <a:s r="33">
+                                 <a:s>MCV</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="34">
+                                 <a:s>occurrence</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="35">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="37"> on or before </a:s>
+                        <a:s r="36">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="38" locator="31:3-32:56" xsi:type="Query">
+            <source localId="32" locator="31:3-31:39" alias="MCV">
+               <expression localId="31" locator="31:3-31:35" name="MCV Supplementary Dose" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="37" locator="32:5-32:56" xsi:type="SameOrBefore">
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="35" locator="32:11-32:37" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                  <operand localId="34" locator="32:11-32:24" path="occurrence" scope="MCV" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="If">
+                  <condition xsi:type="IsNull">
+                     <operand xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="36" locator="32:52-32:56" name="Today" xsi:type="ParameterRef"/>
+                     </operand>
+                  </condition>
+                  <then xsi:type="Null">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </then>
+                  <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <low xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="36" locator="32:52-32:56" name="Today" xsi:type="ParameterRef"/>
+                     </low>
+                     <high xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="36" locator="32:52-32:56" name="Today" xsi:type="ParameterRef"/>
+                     </high>
+                  </else>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="48" locator="34:1-36:56" name="MCV Dose 0 Dose" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="48">
+               <a:s>define &quot;MCV Dose 0 Dose&quot;:
+  </a:s>
+               <a:s r="47">
+                  <a:s>
+                     <a:s r="41">
+                        <a:s r="40">
+                           <a:s>
+                              <a:s>Elements.&quot;MCV Dose 0 Dose&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> MCV</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="46">
+                     <a:s>where </a:s>
+                     <a:s r="46">
+                        <a:s r="44">
+                           <a:s r="43">
+                              <a:s r="42">
+                                 <a:s>MCV</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="43">
+                                 <a:s>occurrence</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="44">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="46"> on or before </a:s>
+                        <a:s r="45">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="47" locator="35:3-36:56" xsi:type="Query">
+            <source localId="41" locator="35:3-35:32" alias="MCV">
+               <expression localId="40" locator="35:3-35:28" name="MCV Dose 0 Dose" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="46" locator="36:5-36:56" xsi:type="SameOrBefore">
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="44" locator="36:11-36:37" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                  <operand localId="43" locator="36:11-36:24" path="occurrence" scope="MCV" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="If">
+                  <condition xsi:type="IsNull">
+                     <operand xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="45" locator="36:52-36:56" name="Today" xsi:type="ParameterRef"/>
+                     </operand>
+                  </condition>
+                  <then xsi:type="Null">
+                     <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                        <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                  </then>
+                  <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                     <low xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="45" locator="36:52-36:56" name="Today" xsi:type="ParameterRef"/>
+                     </low>
+                     <high xsi:type="ToDateTime">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="45" locator="36:52-36:56" name="Today" xsi:type="ParameterRef"/>
+                     </high>
+                  </else>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="56" locator="38:1-40:43" name="MCV Immunization Proposal" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="56">
+               <a:s>define &quot;MCV Immunization Proposal&quot;:
+  </a:s>
+               <a:s r="55">
+                  <a:s>
+                     <a:s r="50">
+                        <a:s r="49">
+                           <a:s>
+                              <a:s>Elements.&quot;MCV Immunization Proposal&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> MCV</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="54">
+                     <a:s>where </a:s>
+                     <a:s r="54">
+                        <a:s r="52">
+                           <a:s r="51">
+                              <a:s>MCV</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="52">
+                              <a:s>authoredOn</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="54"> on or before </a:s>
+                        <a:s r="53">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="55" locator="39:3-40:43" xsi:type="Query">
+            <source localId="50" locator="39:3-39:42" alias="MCV">
+               <expression localId="49" locator="39:3-39:38" name="MCV Immunization Proposal" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="54" locator="40:5-40:43" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand name="ToDateTime" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <signature name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="52" locator="40:11-40:24" path="authoredOn" scope="MCV" xsi:type="Property"/>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="53" locator="40:39-40:43" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="59" locator="42:1-43:42" name="Most Recent MCV Immunization Proposal" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="59">
+               <a:s>define &quot;Most Recent MCV Immunization Proposal&quot;:
+  </a:s>
+               <a:s r="58">
+                  <a:s r="57">
+                     <a:s>&quot;MCV Immunization Proposal&quot;</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="58">
+                     <a:s>mostRecent()</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="58" locator="43:3-43:42" name="mostRecent" libraryName="WC" xsi:type="FunctionRef">
+            <signature xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:MedicationRequest" xsi:type="NamedTypeSpecifier"/>
+            </signature>
+            <operand localId="57" locator="43:3-43:29" name="MCV Immunization Proposal" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="74" locator="60:1-63:75" name="Currently Pregnant Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="74">
+               <a:s>define &quot;Currently Pregnant Observation&quot;:
+  </a:s>
+               <a:s r="73">
+                  <a:s>
+                     <a:s r="61">
+                        <a:s r="60">
+                           <a:s>
+                              <a:s>Elements.&quot;Currently Pregnant Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="72">
+                     <a:s>where </a:s>
+                     <a:s r="72">
+                        <a:s r="65">
+                           <a:s r="63">
+                              <a:s r="62">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="63">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="65">
+                              <a:s>references(</a:s>
+                              <a:s r="64">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="71">
+                           <a:s r="68">
+                              <a:s r="67">
+                                 <a:s r="66">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="67">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="68">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="71">
+                              <a:s>starts </a:s>
+                              <a:s r="70">
+                                 <a:s>9 months</a:s>
+                              </a:s>
+                              <a:s> on or before day of</a:s>
+                           </a:s>
+                           <a:s> </a:s>
+                           <a:s r="69">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="73" locator="61:3-63:75" xsi:type="Query">
+            <source localId="61" locator="61:3-61:45" alias="O">
+               <expression localId="60" locator="61:3-61:43" name="Currently Pregnant Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="72" locator="62:5-63:75" xsi:type="Or">
+               <operand localId="65" locator="62:11-62:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="63" locator="62:11-62:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="64" locator="62:34-62:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="71" locator="63:10-63:75" precision="Day" xsi:type="SameAs">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="63:35-63:40" xsi:type="Start">
+                     <operand localId="68" locator="63:10-63:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="67" locator="63:10-63:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand locator="63:71-63:75" xsi:type="Subtract">
+                        <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                        <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                        <operand localId="69" locator="63:71-63:75" name="Today" xsi:type="ParameterRef"/>
+                        <operand localId="70" locator="63:42-63:49" value="9" unit="months" xsi:type="Quantity"/>
+                     </operand>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="84" locator="65:1-67:47" name="Currently Pregnant Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="84">
+               <a:s>define &quot;Currently Pregnant Condition&quot;:
+  </a:s>
+               <a:s r="83">
+                  <a:s>
+                     <a:s r="78">
+                        <a:s r="77">
+                           <a:s>
+                              <a:s>Elements.&quot;Currently Pregnant Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="82">
+                     <a:s>where </a:s>
+                     <a:s r="82">
+                        <a:s r="80">
+                           <a:s r="79">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="80">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="82"> includes </a:s>
+                        <a:s r="81">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="83" locator="66:3-67:47" xsi:type="Query">
+            <source localId="78" locator="66:3-66:43" alias="C">
+               <expression localId="77" locator="66:3-66:41" name="Currently Pregnant Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="82" locator="67:5-67:47" xsi:type="Contains">
+               <operand localId="80" locator="67:11-67:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                  <operand localId="79" locator="67:11" name="C" xsi:type="AliasRef"/>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="81" locator="67:43-67:47" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="92" locator="55:1-58:39" name="Currently Pregnant" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="92">
+               <a:s>define &quot;Currently Pregnant&quot;: 
+  </a:s>
+               <a:s r="91">
+                  <a:s r="87">
+                     <a:s r="76">
+                        <a:s>exists </a:s>
+                        <a:s r="75">
+                           <a:s>&quot;Currently Pregnant Observation&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="86">
+                        <a:s>exists </a:s>
+                        <a:s r="85">
+                           <a:s>&quot;Currently Pregnant Condition&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="90">
+                     <a:s>exists </a:s>
+                     <a:s r="89">
+                        <a:s r="88">
+                           <a:s>WE</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="89">
+                           <a:s>&quot;Pregnant Observation&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="91" locator="56:3-58:39" xsi:type="Or">
+            <operand localId="87" locator="56:3-57:44" xsi:type="Or">
+               <operand localId="76" locator="56:3-56:41" xsi:type="Exists">
+                  <operand localId="75" locator="56:10-56:41" name="Currently Pregnant Observation" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="86" locator="57:8-57:44" xsi:type="Exists">
+                  <signature xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="85" locator="57:15-57:44" name="Currently Pregnant Condition" xsi:type="ExpressionRef"/>
+               </operand>
+            </operand>
+            <operand localId="90" locator="58:8-58:39" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="89" locator="58:15-58:39" name="Pregnant Observation" libraryName="WE" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="107" locator="142:1-145:59" name="Severely Immunosuppressed Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="107">
+               <a:s>define &quot;Severely Immunosuppressed Observation&quot;:
+  </a:s>
+               <a:s r="106">
+                  <a:s>
+                     <a:s r="95">
+                        <a:s r="94">
+                           <a:s>
+                              <a:s>Elements.&quot;Severely Immunosuppressed Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="105">
+                     <a:s>where </a:s>
+                     <a:s r="105">
+                        <a:s r="99">
+                           <a:s r="97">
+                              <a:s r="96">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="97">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="99">
+                              <a:s>references(</a:s>
+                              <a:s r="98">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="104">
+                           <a:s r="102">
+                              <a:s r="101">
+                                 <a:s r="100">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="101">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="102">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="104"> starts on or before </a:s>
+                           <a:s r="103">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="106" locator="143:3-145:59" xsi:type="Query">
+            <source localId="95" locator="143:3-143:52" alias="O">
+               <expression localId="94" locator="143:3-143:50" name="Severely Immunosuppressed Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="105" locator="144:5-145:59" xsi:type="Or">
+               <operand localId="99" locator="144:11-144:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="97" locator="144:11-144:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="98" locator="144:34-144:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="104" locator="145:10-145:59" xsi:type="SameOrBefore">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="145:35-145:40" xsi:type="Start">
+                     <operand localId="102" locator="145:10-145:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="101" locator="145:10-145:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="103" locator="145:55-145:59" name="Today" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="117" locator="147:1-149:58" name="Severely Immunosuppressed Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="117">
+               <a:s>define &quot;Severely Immunosuppressed Condition&quot;:
+  </a:s>
+               <a:s r="116">
+                  <a:s>
+                     <a:s r="111">
+                        <a:s r="110">
+                           <a:s>
+                              <a:s>Elements.&quot;Severely Immunosuppressed Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="115">
+                     <a:s>where </a:s>
+                     <a:s r="115">
+                        <a:s r="113">
+                           <a:s r="112">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="113">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="115"> starts on or before </a:s>
+                        <a:s r="114">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="116" locator="148:3-149:58" xsi:type="Query">
+            <source localId="111" locator="148:3-148:50" alias="C">
+               <expression localId="110" locator="148:3-148:48" name="Severely Immunosuppressed Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="115" locator="149:5-149:58" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="149:34-149:39" xsi:type="Start">
+                  <operand localId="113" locator="149:11-149:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="112" locator="149:11" name="C" xsi:type="AliasRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="114" locator="149:54-149:58" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="121" locator="138:1-140:51" name="Severely Immunosuppressed" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="121">
+               <a:s>/**
+ * Contraindications 
+ */
+define &quot;Severely Immunosuppressed&quot;:
+  </a:s>
+               <a:s r="120">
+                  <a:s r="109">
+                     <a:s>exists </a:s>
+                     <a:s r="108">
+                        <a:s>&quot;Severely Immunosuppressed Observation&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="119">
+                     <a:s>exists </a:s>
+                     <a:s r="118">
+                        <a:s>&quot;Severely Immunosuppressed Condition&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="120" locator="139:3-140:51" xsi:type="Or">
+            <operand localId="109" locator="139:3-139:48" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="108" locator="139:10-139:48" name="Severely Immunosuppressed Observation" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="119" locator="140:8-140:51" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="118" locator="140:15-140:51" name="Severely Immunosuppressed Condition" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="131" locator="159:1-161:58" name="History Of Anaphylactic Reactions Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="131">
+               <a:s>define &quot;History Of Anaphylactic Reactions Condition&quot;:
+  </a:s>
+               <a:s r="130">
+                  <a:s>
+                     <a:s r="125">
+                        <a:s r="124">
+                           <a:s>
+                              <a:s>Elements.&quot;History Of Anaphylactic Reactions Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="129">
+                     <a:s>where </a:s>
+                     <a:s r="129">
+                        <a:s r="127">
+                           <a:s r="126">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="127">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="129"> starts on or before </a:s>
+                        <a:s r="128">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="130" locator="160:3-161:58" xsi:type="Query">
+            <source localId="125" locator="160:3-160:58" alias="C">
+               <expression localId="124" locator="160:3-160:56" name="History Of Anaphylactic Reactions Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="129" locator="161:5-161:58" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="161:34-161:39" xsi:type="Start">
+                  <operand localId="127" locator="161:11-161:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="126" locator="161:11" name="C" xsi:type="AliasRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="128" locator="161:54-161:58" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="134" locator="151:1-152:54" name="History Of Anaphylactic Reactions" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="134">
+               <a:s>define &quot;History Of Anaphylactic Reactions&quot;:
+  </a:s>
+               <a:s r="133">
+                  <a:s>exists </a:s>
+                  <a:s r="132">
+                     <a:s>&quot;History Of Anaphylactic Reactions Condition&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="133" locator="152:3-152:54" xsi:type="Exists">
+            <signature xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </signature>
+            <operand localId="132" locator="152:10-152:54" name="History Of Anaphylactic Reactions Condition" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="150" locator="167:1-170:59" name="Severe Allergic Reactions Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="150">
+               <a:s>define &quot;Severe Allergic Reactions Observation&quot;:
+  </a:s>
+               <a:s r="149">
+                  <a:s>
+                     <a:s r="138">
+                        <a:s r="137">
+                           <a:s>
+                              <a:s>Elements.&quot;Severe Allergic Reactions Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="148">
+                     <a:s>where </a:s>
+                     <a:s r="148">
+                        <a:s r="142">
+                           <a:s r="140">
+                              <a:s r="139">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="140">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="142">
+                              <a:s>references(</a:s>
+                              <a:s r="141">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="147">
+                           <a:s r="145">
+                              <a:s r="144">
+                                 <a:s r="143">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="144">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="145">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="147"> starts on or before </a:s>
+                           <a:s r="146">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="149" locator="168:3-170:59" xsi:type="Query">
+            <source localId="138" locator="168:3-168:52" alias="O">
+               <expression localId="137" locator="168:3-168:50" name="Severe Allergic Reactions Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="148" locator="169:5-170:59" xsi:type="Or">
+               <operand localId="142" locator="169:11-169:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="140" locator="169:11-169:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="141" locator="169:34-169:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="147" locator="170:10-170:59" xsi:type="SameOrBefore">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="170:35-170:40" xsi:type="Start">
+                     <operand localId="145" locator="170:10-170:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="144" locator="170:10-170:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="146" locator="170:55-170:59" name="Today" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="160" locator="172:1-174:58" name="Severe Allergic Reactions Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="160">
+               <a:s>define &quot;Severe Allergic Reactions Condition&quot;:
+  </a:s>
+               <a:s r="159">
+                  <a:s>
+                     <a:s r="154">
+                        <a:s r="153">
+                           <a:s>
+                              <a:s>Elements.&quot;Severe Allergic Reactions Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="158">
+                     <a:s>where </a:s>
+                     <a:s r="158">
+                        <a:s r="156">
+                           <a:s r="155">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="156">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="158"> starts on or before </a:s>
+                        <a:s r="157">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="159" locator="173:3-174:58" xsi:type="Query">
+            <source localId="154" locator="173:3-173:50" alias="C">
+               <expression localId="153" locator="173:3-173:48" name="Severe Allergic Reactions Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="158" locator="174:5-174:58" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="174:34-174:39" xsi:type="Start">
+                  <operand localId="156" locator="174:11-174:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="155" locator="174:11" name="C" xsi:type="AliasRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="157" locator="174:54-174:58" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="164" locator="163:1-165:51" name="Severe Allergic Reactions" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="164">
+               <a:s>define &quot;Severe Allergic Reactions&quot;:
+  </a:s>
+               <a:s r="163">
+                  <a:s r="152">
+                     <a:s>exists </a:s>
+                     <a:s r="151">
+                        <a:s>&quot;Severe Allergic Reactions Observation&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="162">
+                     <a:s>exists </a:s>
+                     <a:s r="161">
+                        <a:s>&quot;Severe Allergic Reactions Condition&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="163" locator="164:3-165:51" xsi:type="Or">
+            <operand localId="152" locator="164:3-164:48" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="151" locator="164:10-164:48" name="Severe Allergic Reactions Observation" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="162" locator="165:8-165:51" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="161" locator="165:15-165:51" name="Severe Allergic Reactions Condition" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="180" locator="180:1-183:59" name="Symptomatic HIV Infection Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="180">
+               <a:s>define &quot;Symptomatic HIV Infection Observation&quot;:
+  </a:s>
+               <a:s r="179">
+                  <a:s>
+                     <a:s r="168">
+                        <a:s r="167">
+                           <a:s>
+                              <a:s>Elements.&quot;Symptomatic HIV Infection Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="178">
+                     <a:s>where </a:s>
+                     <a:s r="178">
+                        <a:s r="172">
+                           <a:s r="170">
+                              <a:s r="169">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="170">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="172">
+                              <a:s>references(</a:s>
+                              <a:s r="171">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="177">
+                           <a:s r="175">
+                              <a:s r="174">
+                                 <a:s r="173">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="174">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="175">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="177"> starts on or before </a:s>
+                           <a:s r="176">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="179" locator="181:3-183:59" xsi:type="Query">
+            <source localId="168" locator="181:3-181:52" alias="O">
+               <expression localId="167" locator="181:3-181:50" name="Symptomatic HIV Infection Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="178" locator="182:5-183:59" xsi:type="Or">
+               <operand localId="172" locator="182:11-182:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="170" locator="182:11-182:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="171" locator="182:34-182:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="177" locator="183:10-183:59" xsi:type="SameOrBefore">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="183:35-183:40" xsi:type="Start">
+                     <operand localId="175" locator="183:10-183:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="174" locator="183:10-183:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="176" locator="183:55-183:59" name="Today" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="190" locator="185:1-187:58" name="Symptomatic HIV Infection Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="190">
+               <a:s>define &quot;Symptomatic HIV Infection Condition&quot;:
+  </a:s>
+               <a:s r="189">
+                  <a:s>
+                     <a:s r="184">
+                        <a:s r="183">
+                           <a:s>
+                              <a:s>Elements.&quot;Symptomatic HIV Infection Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="188">
+                     <a:s>where </a:s>
+                     <a:s r="188">
+                        <a:s r="186">
+                           <a:s r="185">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="186">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="188"> starts on or before </a:s>
+                        <a:s r="187">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="189" locator="186:3-187:58" xsi:type="Query">
+            <source localId="184" locator="186:3-186:50" alias="C">
+               <expression localId="183" locator="186:3-186:48" name="Symptomatic HIV Infection Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="188" locator="187:5-187:58" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="187:34-187:39" xsi:type="Start">
+                  <operand localId="186" locator="187:11-187:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="185" locator="187:11" name="C" xsi:type="AliasRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="187" locator="187:54-187:58" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="194" locator="176:1-178:51" name="Symptomatic HIV Infection" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="194">
+               <a:s>define &quot;Symptomatic HIV Infection&quot;:
+  </a:s>
+               <a:s r="193">
+                  <a:s r="182">
+                     <a:s>exists </a:s>
+                     <a:s r="181">
+                        <a:s>&quot;Symptomatic HIV Infection Observation&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="192">
+                     <a:s>exists </a:s>
+                     <a:s r="191">
+                        <a:s>&quot;Symptomatic HIV Infection Condition&quot;</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="193" locator="177:3-178:51" xsi:type="Or">
+            <operand localId="182" locator="177:3-177:48" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="181" locator="177:10-177:48" name="Symptomatic HIV Infection Observation" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="192" locator="178:8-178:51" xsi:type="Exists">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand localId="191" locator="178:15-178:51" name="Symptomatic HIV Infection Condition" xsi:type="ExpressionRef"/>
+            </operand>
+         </expression>
+      </def>
+      <def localId="197" locator="48:1-53:34" name="Potential Contraindications" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="197">
+               <a:s>/*
+ * Contraindications
+ */
+define &quot;Potential Contraindications&quot;:
+  </a:s>
+               <a:s r="196">
+                  <a:s r="166">
+                     <a:s r="136">
+                        <a:s r="123">
+                           <a:s r="93">
+                              <a:s>&quot;Currently Pregnant&quot;</a:s>
+                           </a:s>
+                           <a:s>
+    or </a:s>
+                           <a:s r="122">
+                              <a:s>&quot;Severely Immunosuppressed&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+    or </a:s>
+                        <a:s r="135">
+                           <a:s>&quot;History Of Anaphylactic Reactions&quot;</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+    or </a:s>
+                     <a:s r="165">
+                        <a:s>&quot;Severe Allergic Reactions&quot;</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    or </a:s>
+                  <a:s r="195">
+                     <a:s>&quot;Symptomatic HIV Infection&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="196" locator="49:3-53:34" xsi:type="Or">
+            <operand localId="166" locator="49:3-52:34" xsi:type="Or">
+               <operand localId="136" locator="49:3-51:42" xsi:type="Or">
+                  <operand localId="123" locator="49:3-50:34" xsi:type="Or">
+                     <operand localId="93" locator="49:3-49:22" name="Currently Pregnant" xsi:type="ExpressionRef"/>
+                     <operand localId="122" locator="50:8-50:34" name="Severely Immunosuppressed" xsi:type="ExpressionRef"/>
+                  </operand>
+                  <operand localId="135" locator="51:8-51:42" name="History Of Anaphylactic Reactions" xsi:type="ExpressionRef"/>
+               </operand>
+               <operand localId="165" locator="52:8-52:34" name="Severe Allergic Reactions" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="195" locator="53:8-53:34" name="Symptomatic HIV Infection" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="208" locator="71:1-73:57" name="Patient Mother's Pregnancy Outcome Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="208">
+               <a:s>// TODO: Should this be related to the mother's record?
+//Total number of births including abortions, stillbirths and live births.
+define &quot;Patient Mother's Pregnancy Outcome Observation&quot;:
+  </a:s>
+               <a:s r="207">
+                  <a:s>
+                     <a:s r="199">
+                        <a:s r="198">
+                           <a:s r="198">
+                              <a:s>[Observation: </a:s>
+                              <a:s>
+                                 <a:s>code</a:s>
+                              </a:s>
+                              <a:s> ~ </a:s>
+                              <a:s>
+                                 <a:s>Concepts.&quot;[#] Births total&quot;</a:s>
+                              </a:s>
+                              <a:s>]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="206">
+                     <a:s>where </a:s>
+                     <a:s r="206">
+                        <a:s r="201">
+                           <a:s r="200">
+                              <a:s>O</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="201">
+                              <a:s>status</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> in </a:s>
+                        <a:s r="205">
+                           <a:s>{ </a:s>
+                           <a:s r="202">
+                              <a:s>'final'</a:s>
+                           </a:s>
+                           <a:s>, </a:s>
+                           <a:s r="203">
+                              <a:s>'amended'</a:s>
+                           </a:s>
+                           <a:s>, </a:s>
+                           <a:s r="204">
+                              <a:s>'corrected'</a:s>
+                           </a:s>
+                           <a:s> }</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="207" locator="72:3-73:57" xsi:type="Query">
+            <source localId="199" locator="72:3-72:53" alias="O">
+               <expression localId="198" locator="72:3-72:51" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" codeProperty="code" codeComparator="~" xsi:type="Retrieve">
+                  <codes xsi:type="ToList">
+                     <operand locator="72:24-72:50" name="[#] Births total" libraryName="Concepts" xsi:type="CodeRef"/>
+                  </codes>
+               </expression>
+            </source>
+            <where localId="206" locator="73:5-73:57" xsi:type="In">
+               <operand name="ToString" libraryName="FHIRHelpers" xsi:type="FunctionRef">
+                  <signature name="fhir:ObservationStatus" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="201" locator="73:11-73:18" path="status" scope="O" xsi:type="Property"/>
+               </operand>
+               <operand localId="205" locator="73:23-73:57" xsi:type="List">
+                  <element localId="202" locator="73:25-73:31" valueType="t:String" value="final" xsi:type="Literal"/>
+                  <element localId="203" locator="73:34-73:42" valueType="t:String" value="amended" xsi:type="Literal"/>
+                  <element localId="204" locator="73:45-73:55" valueType="t:String" value="corrected" xsi:type="Literal"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="219" locator="75:1-79:9" name="Patient Mother's Pregnancy Outcome Observation Value" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="219">
+               <a:s>define &quot;Patient Mother's Pregnancy Outcome Observation Value&quot;:
+  </a:s>
+               <a:s r="218">
+                  <a:s r="217">
+                     <a:s>Last(
+    </a:s>
+                     <a:s r="216">
+                        <a:s>
+                           <a:s r="210">
+                              <a:s r="209">
+                                 <a:s>
+                                    <a:s>&quot;Patient Mother's Pregnancy Outcome Observation&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> O</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="215">
+                           <a:s>sort by </a:s>
+                           <a:s r="214">
+                              <a:s r="213">
+                                 <a:s>start of </a:s>
+                                 <a:s r="212">
+                                    <a:s r="211">
+                                       <a:s>effective</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="212">
+                                       <a:s>toInterval()</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="218">
+                     <a:s>value</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="218" locator="76:3-79:9" path="value" xsi:type="Property">
+            <source localId="217" locator="76:3-79:3" xsi:type="Last">
+               <source localId="216" locator="77:5-78:45" xsi:type="Query">
+                  <source localId="210" locator="77:5-77:54" alias="O">
+                     <expression localId="209" locator="77:5-77:52" name="Patient Mother's Pregnancy Outcome Observation" xsi:type="ExpressionRef"/>
+                  </source>
+                  <sort localId="215" locator="78:7-78:45">
+                     <by localId="214" locator="78:15-78:45" direction="asc" xsi:type="ByExpression">
+                        <expression localId="213" locator="78:15-78:45" xsi:type="Start">
+                           <operand localId="212" locator="78:24-78:45" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                              <operand localId="211" locator="78:24-78:32" name="effective" xsi:type="IdentifierRef"/>
+                           </operand>
+                        </expression>
+                     </by>
+                  </sort>
+               </source>
+            </source>
+         </expression>
+      </def>
+      <def localId="233" locator="84:1-87:52" name="Preterm Births Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="233">
+               <a:s>// TODO: Should this be related to the mother's record
+// Total number of children whose birth occurred through the end of the last day of the 37th week (259th day) 
+// following onset of the last menstrual period
+define &quot;Preterm Births Observation&quot;:
+  </a:s>
+               <a:s r="232">
+                  <a:s>
+                     <a:s r="221">
+                        <a:s r="220">
+                           <a:s>
+                              <a:s>Elements.&quot;Preterm Births Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="231">
+                     <a:s>where </a:s>
+                     <a:s r="231">
+                        <a:s r="225">
+                           <a:s r="223">
+                              <a:s r="222">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="223">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="225">
+                              <a:s>references(</a:s>
+                              <a:s r="224">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="230">
+                           <a:s r="228">
+                              <a:s r="227">
+                                 <a:s r="226">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="227">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="228">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="230"> on or before </a:s>
+                           <a:s r="229">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="232" locator="85:3-87:52" xsi:type="Query">
+            <source localId="221" locator="85:3-85:41" alias="O">
+               <expression localId="220" locator="85:3-85:39" name="Preterm Births Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="231" locator="86:5-87:52" xsi:type="Or">
+               <operand localId="225" locator="86:11-86:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="223" locator="86:11-86:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="224" locator="86:34-86:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="230" locator="87:10-87:52" xsi:type="SameOrBefore">
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="228" locator="87:10-87:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="227" locator="87:10-87:20" path="effective" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="If">
+                     <condition xsi:type="IsNull">
+                        <operand xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="229" locator="87:48-87:52" name="Today" xsi:type="ParameterRef"/>
+                        </operand>
+                     </condition>
+                     <then xsi:type="Null">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </then>
+                     <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="229" locator="87:48-87:52" name="Today" xsi:type="ParameterRef"/>
+                        </low>
+                        <high xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="229" locator="87:48-87:52" name="Today" xsi:type="ParameterRef"/>
+                        </high>
+                     </else>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="244" locator="89:1-93:9" name="Preterm" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="244">
+               <a:s>define &quot;Preterm&quot;:
+  </a:s>
+               <a:s r="243">
+                  <a:s r="242">
+                     <a:s>Last(
+    </a:s>
+                     <a:s r="241">
+                        <a:s>
+                           <a:s r="235">
+                              <a:s r="234">
+                                 <a:s>
+                                    <a:s>&quot;Preterm Births Observation&quot;</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s> O</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      </a:s>
+                        <a:s r="240">
+                           <a:s>sort by </a:s>
+                           <a:s r="239">
+                              <a:s r="238">
+                                 <a:s>start of </a:s>
+                                 <a:s r="237">
+                                    <a:s r="236">
+                                       <a:s>effective</a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="237">
+                                       <a:s>toInterval()</a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>
+  )</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="243">
+                     <a:s>value</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="243" locator="90:3-93:9" path="value" xsi:type="Property">
+            <source localId="242" locator="90:3-93:3" xsi:type="Last">
+               <source localId="241" locator="91:5-92:45" xsi:type="Query">
+                  <source localId="235" locator="91:5-91:34" alias="O">
+                     <expression localId="234" locator="91:5-91:32" name="Preterm Births Observation" xsi:type="ExpressionRef"/>
+                  </source>
+                  <sort localId="240" locator="92:7-92:45">
+                     <by localId="239" locator="92:15-92:45" direction="asc" xsi:type="ByExpression">
+                        <expression localId="238" locator="92:15-92:45" xsi:type="Start">
+                           <operand localId="237" locator="92:24-92:45" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                              <operand localId="236" locator="92:24-92:32" name="effective" xsi:type="IdentifierRef"/>
+                           </operand>
+                        </expression>
+                     </by>
+                  </sort>
+               </source>
+            </source>
+         </expression>
+      </def>
+      <def localId="258" locator="97:1-100:52" name="Preterm Birth" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="258">
+               <a:s>// TODO: This does not seem right, what is the code of the observation?
+//Observed Preterm birth
+define &quot;Preterm Birth&quot;:
+  </a:s>
+               <a:s r="257">
+                  <a:s>
+                     <a:s r="246">
+                        <a:s r="245">
+                           <a:s>
+                              <a:s>Elements.&quot;Preterm Birth&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="256">
+                     <a:s>where </a:s>
+                     <a:s r="256">
+                        <a:s r="250">
+                           <a:s r="248">
+                              <a:s r="247">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="248">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="250">
+                              <a:s>references(</a:s>
+                              <a:s r="249">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="255">
+                           <a:s r="253">
+                              <a:s r="252">
+                                 <a:s r="251">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="252">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="253">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="255"> on or before </a:s>
+                           <a:s r="254">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="257" locator="98:3-100:52" xsi:type="Query">
+            <source localId="246" locator="98:3-98:28" alias="O">
+               <expression localId="245" locator="98:3-98:26" name="Preterm Birth" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="256" locator="99:5-100:52" xsi:type="Or">
+               <operand localId="250" locator="99:11-99:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="248" locator="99:11-99:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="249" locator="99:34-99:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="255" locator="100:10-100:52" xsi:type="SameOrBefore">
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="253" locator="100:10-100:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="252" locator="100:10-100:20" path="effective" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="If">
+                     <condition xsi:type="IsNull">
+                        <operand xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="254" locator="100:48-100:52" name="Today" xsi:type="ParameterRef"/>
+                        </operand>
+                     </condition>
+                     <then xsi:type="Null">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </then>
+                     <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="254" locator="100:48-100:52" name="Today" xsi:type="ParameterRef"/>
+                        </low>
+                        <high xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="254" locator="100:48-100:52" name="Today" xsi:type="ParameterRef"/>
+                        </high>
+                     </else>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="271" locator="104:1-107:12" name="Adverse Event" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="271">
+               <a:s>// TODO: How does/should this relate to the encounter?
+//@dataElement Adverse Event:
+define &quot;Adverse Event&quot;:
+  </a:s>
+               <a:s r="270">
+                  <a:s>
+                     <a:s>from </a:s>
+                     <a:s r="260">
+                        <a:s r="259">
+                           <a:s r="259">
+                              <a:s>[Immunization]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> I</a:s>
+                     </a:s>
+                     <a:s>, </a:s>
+                     <a:s r="262">
+                        <a:s r="261">
+                           <a:s r="261">
+                              <a:s>[Observation]</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="267">
+                     <a:s>where </a:s>
+                     <a:s r="267">
+                        <a:s r="265">
+                           <a:s r="264">
+                              <a:s r="263">
+                                 <a:s>I</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="264">
+                                 <a:s>reaction</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="265">
+                              <a:s>detail</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="267">
+                           <a:s>references(</a:s>
+                           <a:s r="266">
+                              <a:s>O</a:s>
+                           </a:s>
+                           <a:s>)</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="269">
+                     <a:s>return </a:s>
+                     <a:s r="268">
+                        <a:s>O</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="270" locator="105:3-107:12" xsi:type="Query">
+            <source localId="260" locator="105:8-105:23" alias="I">
+               <expression localId="259" locator="105:8-105:21" dataType="fhir:Immunization" templateId="http://hl7.org/fhir/StructureDefinition/Immunization" xsi:type="Retrieve"/>
+            </source>
+            <source localId="262" locator="105:26-105:40" alias="O">
+               <expression localId="261" locator="105:26-105:38" dataType="fhir:Observation" templateId="http://hl7.org/fhir/StructureDefinition/Observation" xsi:type="Retrieve"/>
+            </source>
+            <where localId="267" locator="106:5-106:41" name="references" libraryName="WC" xsi:type="FunctionRef">
+               <signature xsi:type="ListTypeSpecifier">
+                  <elementType name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <signature name="fhir:Resource" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="265" locator="106:11-106:27" xsi:type="Query">
+                  <source alias="$this">
+                     <expression localId="264" locator="106:11-106:20" path="reaction" scope="I" xsi:type="Property"/>
+                  </source>
+                  <where xsi:type="Not">
+                     <operand xsi:type="IsNull">
+                        <operand path="detail" xsi:type="Property">
+                           <source name="$this" xsi:type="AliasRef"/>
+                        </operand>
+                     </operand>
+                  </where>
+                  <return distinct="false">
+                     <expression path="detail" xsi:type="Property">
+                        <source name="$this" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </operand>
+               <operand localId="266" locator="106:40" name="O" xsi:type="AliasRef"/>
+            </where>
+            <return localId="269" locator="107:5-107:12">
+               <expression localId="268" locator="107:12" name="O" xsi:type="AliasRef"/>
+            </return>
+         </expression>
+      </def>
+      <def localId="280" locator="115:1-117:56" name="Active Confirmed Allergy" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="280">
+               <a:s>define &quot;Active Confirmed Allergy&quot;:
+  </a:s>
+               <a:s r="279">
+                  <a:s>
+                     <a:s r="273">
+                        <a:s r="272">
+                           <a:s>
+                              <a:s>Elements.&quot;Active Confirmed Allergy&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> A</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="278">
+                     <a:s>where </a:s>
+                     <a:s r="278">
+                        <a:s r="276">
+                           <a:s r="275">
+                              <a:s r="274">
+                                 <a:s>A</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="275">
+                                 <a:s>onset</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="276">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="278"> starts on or before </a:s>
+                        <a:s r="277">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="279" locator="116:3-117:56" xsi:type="Query">
+            <source localId="273" locator="116:3-116:39" alias="A">
+               <expression localId="272" locator="116:3-116:37" name="Active Confirmed Allergy" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="278" locator="117:5-117:56" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="117:32-117:37" xsi:type="Start">
+                  <operand localId="276" locator="117:11-117:30" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="275" locator="117:11-117:17" path="onset" scope="A" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="277" locator="117:52-117:56" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="283" locator="112:1-113:35" name="Allergy = True" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="283">
+               <a:s>/* 
+ * @dataElement Allergy = True
+ */
+define &quot;Allergy = True&quot;:
+  </a:s>
+               <a:s r="282">
+                  <a:s>exists </a:s>
+                  <a:s r="281">
+                     <a:s>&quot;Active Confirmed Allergy&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="282" locator="113:3-113:35" xsi:type="Exists">
+            <signature xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:AllergyIntolerance" xsi:type="NamedTypeSpecifier"/>
+            </signature>
+            <operand localId="281" locator="113:10-113:35" name="Active Confirmed Allergy" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="291" locator="125:1-127:58" name="Immunocompromised Condition" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="291">
+               <a:s>define &quot;Immunocompromised Condition&quot;:
+  </a:s>
+               <a:s r="290">
+                  <a:s>
+                     <a:s r="285">
+                        <a:s r="284">
+                           <a:s>
+                              <a:s>Elements.&quot;Immunocompromised Condition&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> C</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="289">
+                     <a:s>where </a:s>
+                     <a:s r="289">
+                        <a:s r="287">
+                           <a:s r="286">
+                              <a:s>C</a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="287">
+                              <a:s>prevalenceInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="289"> starts on or before </a:s>
+                        <a:s r="288">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="290" locator="126:3-127:58" xsi:type="Query">
+            <source localId="285" locator="126:3-126:42" alias="C">
+               <expression localId="284" locator="126:3-126:40" name="Immunocompromised Condition" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="289" locator="127:5-127:58" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="127:34-127:39" xsi:type="Start">
+                  <operand localId="287" locator="127:11-127:32" name="prevalenceInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="286" locator="127:11" name="C" xsi:type="AliasRef"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="288" locator="127:54-127:58" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="294" locator="122:1-123:37" name="Immunocompromised = True" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="294">
+               <a:s>/* 
+ * @dataElement Immunocompromised = True
+ */
+define &quot;Immunocompromised = True&quot;:
+	</a:s>
+               <a:s r="293">
+                  <a:s>exists </a:s>
+                  <a:s r="292">
+                     <a:s>&quot;Immunocompromised Condition&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="293" locator="123:2-123:37" xsi:type="Exists">
+            <signature xsi:type="ListTypeSpecifier">
+               <elementType name="fhir:Condition" xsi:type="NamedTypeSpecifier"/>
+            </signature>
+            <operand localId="292" locator="123:9-123:37" name="Immunocompromised Condition" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="297" locator="132:1-133:42" name="Doses Administered to Patient" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="297">
+               <a:s>/**
+ * @dataElement All Doses Administered to Patient to patient ordered newest to oldest
+ */
+define &quot;Doses Administered to Patient&quot;:
+  </a:s>
+               <a:s r="296">
+                  <a:s r="295">
+                     <a:s>Elements</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="296">
+                     <a:s>&quot;Doses Administered to Patient&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="296" locator="133:3-133:42" name="Doses Administered to Patient" libraryName="Elements" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="311" locator="154:1-157:59" name="History Of Anaphylactic Reactions Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="311">
+               <a:s>define &quot;History Of Anaphylactic Reactions Observation&quot;:
+  </a:s>
+               <a:s r="310">
+                  <a:s>
+                     <a:s r="299">
+                        <a:s r="298">
+                           <a:s>
+                              <a:s>Elements.&quot;History Of Anaphylactic Reactions Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="309">
+                     <a:s>where </a:s>
+                     <a:s r="309">
+                        <a:s r="303">
+                           <a:s r="301">
+                              <a:s r="300">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="301">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="303">
+                              <a:s>references(</a:s>
+                              <a:s r="302">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="308">
+                           <a:s r="306">
+                              <a:s r="305">
+                                 <a:s r="304">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="305">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="306">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="308"> starts on or before </a:s>
+                           <a:s r="307">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="310" locator="155:3-157:59" xsi:type="Query">
+            <source localId="299" locator="155:3-155:60" alias="O">
+               <expression localId="298" locator="155:3-155:58" name="History Of Anaphylactic Reactions Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="309" locator="156:5-157:59" xsi:type="Or">
+               <operand localId="303" locator="156:11-156:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="301" locator="156:11-156:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="302" locator="156:34-156:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="308" locator="157:10-157:59" xsi:type="SameOrBefore">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="157:35-157:40" xsi:type="Start">
+                     <operand localId="306" locator="157:10-157:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="305" locator="157:10-157:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="307" locator="157:55-157:59" name="Today" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="325" locator="193:1-196:52" name="Patient Birth Weight Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="325">
+               <a:s>/******************************
+ * Test Results
+ */
+
+define &quot;Patient Birth Weight Observation&quot;:
+  </a:s>
+               <a:s r="324">
+                  <a:s>
+                     <a:s r="313">
+                        <a:s r="312">
+                           <a:s>
+                              <a:s>Elements.&quot;Patient Birth Weight Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="323">
+                     <a:s>where </a:s>
+                     <a:s r="323">
+                        <a:s r="317">
+                           <a:s r="315">
+                              <a:s r="314">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="315">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="317">
+                              <a:s>references(</a:s>
+                              <a:s r="316">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="322">
+                           <a:s r="320">
+                              <a:s r="319">
+                                 <a:s r="318">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="319">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="320">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="322"> on or before </a:s>
+                           <a:s r="321">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="324" locator="194:3-196:52" xsi:type="Query">
+            <source localId="313" locator="194:3-194:47" alias="O">
+               <expression localId="312" locator="194:3-194:45" name="Patient Birth Weight Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="323" locator="195:5-196:52" xsi:type="Or">
+               <operand localId="317" locator="195:11-195:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="315" locator="195:11-195:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="316" locator="195:34-195:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="322" locator="196:10-196:52" xsi:type="SameOrBefore">
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <signature xsi:type="IntervalTypeSpecifier">
+                     <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <operand localId="320" locator="196:10-196:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="319" locator="196:10-196:20" path="effective" scope="O" xsi:type="Property"/>
+                  </operand>
+                  <operand xsi:type="If">
+                     <condition xsi:type="IsNull">
+                        <operand xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="321" locator="196:48-196:52" name="Today" xsi:type="ParameterRef"/>
+                        </operand>
+                     </condition>
+                     <then xsi:type="Null">
+                        <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+                           <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                     </then>
+                     <else lowClosed="true" highClosed="true" xsi:type="Interval">
+                        <low xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="321" locator="196:48-196:52" name="Today" xsi:type="ParameterRef"/>
+                        </low>
+                        <high xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="321" locator="196:48-196:52" name="Today" xsi:type="ParameterRef"/>
+                        </high>
+                     </else>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="338" locator="198:1-202:26" name="Patient Birth Weight Observation Value" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="338">
+               <a:s>define &quot;Patient Birth Weight Observation Value&quot;:
+  </a:s>
+               <a:s r="337">
+                  <a:s r="335">
+                     <a:s r="334">
+                        <a:s>Last(
+    </a:s>
+                        <a:s r="333">
+                           <a:s>
+                              <a:s r="327">
+                                 <a:s r="326">
+                                    <a:s>
+                                       <a:s>&quot;Patient Birth Weight Observation&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> O</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      </a:s>
+                           <a:s r="332">
+                              <a:s>sort by </a:s>
+                              <a:s r="331">
+                                 <a:s r="330">
+                                    <a:s>start of </a:s>
+                                    <a:s r="329">
+                                       <a:s r="328">
+                                          <a:s>effective</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="329">
+                                          <a:s>toInterval()</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="335">
+                        <a:s>value</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> as </a:s>
+                  <a:s r="336">
+                     <a:s>FHIR.Quantity</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="337" locator="199:3-202:26" strict="false" xsi:type="As">
+            <operand localId="335" locator="199:3-202:9" path="value" xsi:type="Property">
+               <source localId="334" locator="199:3-202:3" xsi:type="Last">
+                  <source localId="333" locator="200:5-201:45" xsi:type="Query">
+                     <source localId="327" locator="200:5-200:40" alias="O">
+                        <expression localId="326" locator="200:5-200:38" name="Patient Birth Weight Observation" xsi:type="ExpressionRef"/>
+                     </source>
+                     <sort localId="332" locator="201:7-201:45">
+                        <by localId="331" locator="201:15-201:45" direction="asc" xsi:type="ByExpression">
+                           <expression localId="330" locator="201:15-201:45" xsi:type="Start">
+                              <operand localId="329" locator="201:24-201:45" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                                 <operand localId="328" locator="201:24-201:32" name="effective" xsi:type="IdentifierRef"/>
+                              </operand>
+                           </expression>
+                        </by>
+                     </sort>
+                  </source>
+               </source>
+            </operand>
+            <asTypeSpecifier localId="336" locator="202:14-202:26" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </expression>
+      </def>
+      <def localId="341" locator="207:1-208:21" name="Current Patient Age In Years" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="341">
+               <a:s>/** 
+ * @dataElement Patient age in years
+ */
+define &quot;Current Patient Age In Years&quot;:
+  </a:s>
+               <a:s r="340">
+                  <a:s>AgeInYearsAt(</a:s>
+                  <a:s r="339">
+                     <a:s>Today</a:s>
+                  </a:s>
+                  <a:s>)</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="340" locator="208:3-208:21" precision="Year" xsi:type="CalculateAgeAt">
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <operand path="birthDate.value" xsi:type="Property">
+               <source name="Patient" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="339" locator="208:16-208:20" name="Today" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def localId="344" locator="213:1-214:21" name="Current Patient Age In Weeks" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="344">
+               <a:s>/** 
+ * @dataElement Patient age in weeks
+ */
+define &quot;Current Patient Age In Weeks&quot;:
+  </a:s>
+               <a:s r="343">
+                  <a:s>AgeInWeeksAt(</a:s>
+                  <a:s r="342">
+                     <a:s>Today</a:s>
+                  </a:s>
+                  <a:s>)</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="343" locator="214:3-214:21" precision="Week" xsi:type="CalculateAgeAt">
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <operand path="birthDate.value" xsi:type="Property">
+               <source name="Patient" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="342" locator="214:16-214:20" name="Today" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def localId="347" locator="219:1-220:22" name="Current Patient Age In Months" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="347">
+               <a:s>/** 
+ * @dataElement Patient age in months
+ */
+define &quot;Current Patient Age In Months&quot;:
+  </a:s>
+               <a:s r="346">
+                  <a:s>AgeInMonthsAt(</a:s>
+                  <a:s r="345">
+                     <a:s>Today</a:s>
+                  </a:s>
+                  <a:s>)</a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="346" locator="220:3-220:22" precision="Month" xsi:type="CalculateAgeAt">
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+            <operand path="birthDate.value" xsi:type="Property">
+               <source name="Patient" xsi:type="ExpressionRef"/>
+            </operand>
+            <operand localId="345" locator="220:17-220:21" name="Today" xsi:type="ParameterRef"/>
+         </expression>
+      </def>
+      <def localId="350" locator="227:1-228:16" name="Patient Biological Sex" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="350">
+               <a:s>/** 
+ * @dataElement Patient biological sex used for deciding vaccine eligibility
+ * TODO: &quot;Gender&quot; of patient in FHIR is the administrative gender - or can we expect that this will be biological sex and administrative
+ *        gender identity will be captured using the gender identity extension?
+ */
+define &quot;Patient Biological Sex&quot;:
+  </a:s>
+               <a:s r="349">
+                  <a:s r="348">
+                     <a:s>Patient</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="349">
+                     <a:s>gender</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="349" locator="228:3-228:16" path="gender" xsi:type="Property">
+            <source localId="348" locator="228:3-228:9" name="Patient" xsi:type="ExpressionRef"/>
+         </expression>
+      </def>
+      <def localId="360" locator="230:1-232:74" name="HAART Medication Administration" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="360">
+               <a:s>define &quot;HAART Medication Administration&quot;:
+  </a:s>
+               <a:s r="359">
+                  <a:s>
+                     <a:s r="352">
+                        <a:s r="351">
+                           <a:s>
+                              <a:s>Elements.&quot;HAART Medication Administration&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> A</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="358">
+                     <a:s>where </a:s>
+                     <a:s r="358">
+                        <a:s r="355">
+                           <a:s r="354">
+                              <a:s r="353">
+                                 <a:s>A</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="354">
+                                 <a:s>effective</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="355">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> </a:s>
+                        <a:s r="358">
+                           <a:s>starts less than </a:s>
+                           <a:s r="357">
+                              <a:s>12 months</a:s>
+                           </a:s>
+                           <a:s> before</a:s>
+                        </a:s>
+                        <a:s> </a:s>
+                        <a:s r="356">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="359" locator="231:3-232:74" xsi:type="Query">
+            <source localId="352" locator="231:3-231:46" alias="A">
+               <expression localId="351" locator="231:3-231:44" name="HAART Medication Administration" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="358" locator="232:5-232:74" xsi:type="In">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature xsi:type="IntervalTypeSpecifier">
+                  <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               </signature>
+               <operand locator="232:36-232:41" xsi:type="Start">
+                  <operand localId="355" locator="232:11-232:34" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="354" locator="232:11-232:21" path="effective" scope="A" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="Interval">
+                  <low xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand path="low" xsi:type="Property">
+                        <source locator="232:43-232:61" lowClosed="false" highClosed="false" xsi:type="Interval">
+                           <low locator="232:70-232:74" xsi:type="Subtract">
+                              <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                              <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                              <operand localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                              <operand localId="357" locator="232:53-232:61" value="12" unit="months" xsi:type="Quantity"/>
+                           </low>
+                           <high localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                        </source>
+                     </operand>
+                  </low>
+                  <lowClosedExpression path="lowClosed" xsi:type="Property">
+                     <source locator="232:43-232:61" lowClosed="false" highClosed="false" xsi:type="Interval">
+                        <low locator="232:70-232:74" xsi:type="Subtract">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                           <operand localId="357" locator="232:53-232:61" value="12" unit="months" xsi:type="Quantity"/>
+                        </low>
+                        <high localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                     </source>
+                  </lowClosedExpression>
+                  <high xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand path="high" xsi:type="Property">
+                        <source locator="232:43-232:61" lowClosed="false" highClosed="false" xsi:type="Interval">
+                           <low locator="232:70-232:74" xsi:type="Subtract">
+                              <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                              <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                              <operand localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                              <operand localId="357" locator="232:53-232:61" value="12" unit="months" xsi:type="Quantity"/>
+                           </low>
+                           <high localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                        </source>
+                     </operand>
+                  </high>
+                  <highClosedExpression path="highClosed" xsi:type="Property">
+                     <source locator="232:43-232:61" lowClosed="false" highClosed="false" xsi:type="Interval">
+                        <low locator="232:70-232:74" xsi:type="Subtract">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                           <operand localId="357" locator="232:53-232:61" value="12" unit="months" xsi:type="Quantity"/>
+                        </low>
+                        <high localId="356" locator="232:70-232:74" name="Today" xsi:type="ParameterRef"/>
+                     </source>
+                  </highClosedExpression>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="373" locator="234:1-238:30" name="Patient HAART Treatment Start Date" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="373">
+               <a:s>define &quot;Patient HAART Treatment Start Date&quot;:
+  </a:s>
+               <a:s r="372">
+                  <a:s r="371">
+                     <a:s r="370">
+                        <a:s r="369">
+                           <a:s>Last(
+      </a:s>
+                           <a:s r="368">
+                              <a:s>
+                                 <a:s r="362">
+                                    <a:s r="361">
+                                       <a:s>
+                                          <a:s>&quot;HAART Medication Administration&quot;</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s> A</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>
+        </a:s>
+                              <a:s r="367">
+                                 <a:s>sort by </a:s>
+                                 <a:s r="366">
+                                    <a:s r="365">
+                                       <a:s>start of </a:s>
+                                       <a:s r="364">
+                                          <a:s r="363">
+                                             <a:s>effective</a:s>
+                                          </a:s>
+                                          <a:s>.</a:s>
+                                          <a:s r="364">
+                                             <a:s>toInterval()</a:s>
+                                          </a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+  )</a:s>
+                        </a:s>
+                        <a:s>.</a:s>
+                        <a:s r="370">
+                           <a:s>effective</a:s>
+                        </a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="371">
+                        <a:s>toInterval()</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="372">
+                     <a:s>low</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="372" locator="235:3-238:30" path="low" xsi:type="Property">
+            <source localId="371" locator="235:3-238:26" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+               <operand localId="370" locator="235:3-238:13" path="effective" xsi:type="Property">
+                  <source localId="369" locator="235:3-238:3" xsi:type="Last">
+                     <signature xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:MedicationAdministration" xsi:type="NamedTypeSpecifier"/>
+                     </signature>
+                     <source localId="368" locator="236:7-237:47" xsi:type="Query">
+                        <source localId="362" locator="236:7-236:41" alias="A">
+                           <expression localId="361" locator="236:7-236:39" name="HAART Medication Administration" xsi:type="ExpressionRef"/>
+                        </source>
+                        <sort localId="367" locator="237:9-237:47">
+                           <by localId="366" locator="237:17-237:47" direction="asc" xsi:type="ByExpression">
+                              <expression localId="365" locator="237:17-237:47" xsi:type="Start">
+                                 <operand localId="364" locator="237:26-237:47" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                                    <operand localId="363" locator="237:26-237:34" name="effective" xsi:type="IdentifierRef"/>
+                                 </operand>
+                              </expression>
+                           </by>
+                        </sort>
+                     </source>
+                  </source>
+               </operand>
+            </source>
+         </expression>
+      </def>
+      <def localId="382" locator="240:1-241:85" name="Patient HAART Treatment Started 6 to 12 Months Ago" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="382">
+               <a:s>define &quot;Patient HAART Treatment Started 6 to 12 Months Ago&quot;:
+  </a:s>
+               <a:s r="381">
+                  <a:s r="374">
+                     <a:s>&quot;Patient HAART Treatment Start Date&quot;</a:s>
+                  </a:s>
+                  <a:s> between </a:s>
+                  <a:s r="377">
+                     <a:s r="375">
+                        <a:s>Today</a:s>
+                     </a:s>
+                     <a:s> - </a:s>
+                     <a:s r="376">
+                        <a:s>12 months</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> and </a:s>
+                  <a:s r="380">
+                     <a:s r="378">
+                        <a:s>Today</a:s>
+                     </a:s>
+                     <a:s> - </a:s>
+                     <a:s r="379">
+                        <a:s>6 months</a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="381" locator="241:3-241:85" xsi:type="And">
+            <operand xsi:type="GreaterOrEqual">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="374" locator="241:3-241:38" name="Patient HAART Treatment Start Date" xsi:type="ExpressionRef"/>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="377" locator="241:48-241:64" xsi:type="Subtract">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="375" locator="241:48-241:52" name="Today" xsi:type="ParameterRef"/>
+                     <operand localId="376" locator="241:56-241:64" value="12" unit="months" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+            </operand>
+            <operand xsi:type="LessOrEqual">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand localId="374" locator="241:3-241:38" name="Patient HAART Treatment Start Date" xsi:type="ExpressionRef"/>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="380" locator="241:70-241:85" xsi:type="Subtract">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <signature name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="378" locator="241:70-241:74" name="Today" xsi:type="ParameterRef"/>
+                     <operand localId="379" locator="241:78-241:85" value="6" unit="months" xsi:type="Quantity"/>
+                  </operand>
+               </operand>
+            </operand>
+         </expression>
+      </def>
+      <def localId="385" locator="246:1-247:39" name="Patient is receiving HAART" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="385">
+               <a:s>/**
+ * @dataElement The patient has a medication record which indicates that they are receiving ARV
+ */
+define &quot;Patient is receiving HAART&quot;:
+  </a:s>
+               <a:s r="384">
+                  <a:s r="383">
+                     <a:s>Elements</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="384">
+                     <a:s>&quot;Patient is receiving HAART&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="384" locator="247:3-247:39" name="Patient is receiving HAART" libraryName="Elements" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="399" locator="258:1-261:59" name="HIV Status Observation" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="399">
+               <a:s>define &quot;HIV Status Observation&quot;:
+  </a:s>
+               <a:s r="398">
+                  <a:s>
+                     <a:s r="387">
+                        <a:s r="386">
+                           <a:s>
+                              <a:s>Elements.&quot;HIV Status Observation&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> O</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="397">
+                     <a:s>where </a:s>
+                     <a:s r="397">
+                        <a:s r="391">
+                           <a:s r="389">
+                              <a:s r="388">
+                                 <a:s>O</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="389">
+                                 <a:s>encounter</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="391">
+                              <a:s>references(</a:s>
+                              <a:s r="390">
+                                 <a:s>EncounterId</a:s>
+                              </a:s>
+                              <a:s>)</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+      or </a:s>
+                        <a:s r="396">
+                           <a:s r="394">
+                              <a:s r="393">
+                                 <a:s r="392">
+                                    <a:s>O</a:s>
+                                 </a:s>
+                                 <a:s>.</a:s>
+                                 <a:s r="393">
+                                    <a:s>effective</a:s>
+                                 </a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="394">
+                                 <a:s>toInterval()</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s r="396"> starts on or before </a:s>
+                           <a:s r="395">
+                              <a:s>Today</a:s>
+                           </a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="398" locator="259:3-261:59" xsi:type="Query">
+            <source localId="387" locator="259:3-259:37" alias="O">
+               <expression localId="386" locator="259:3-259:35" name="HIV Status Observation" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="397" locator="260:5-261:59" xsi:type="Or">
+               <operand localId="391" locator="260:11-260:45" name="references" libraryName="WC" xsi:type="FunctionRef">
+                  <signature name="fhir:Reference" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:String" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="389" locator="260:11-260:21" path="encounter" scope="O" xsi:type="Property"/>
+                  <operand localId="390" locator="260:34-260:44" name="EncounterId" xsi:type="ParameterRef"/>
+               </operand>
+               <operand localId="396" locator="261:10-261:59" xsi:type="SameOrBefore">
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                  <operand locator="261:35-261:40" xsi:type="Start">
+                     <operand localId="394" locator="261:10-261:33" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                        <operand localId="393" locator="261:10-261:20" path="effective" scope="O" xsi:type="Property"/>
+                     </operand>
+                  </operand>
+                  <operand xsi:type="ToDateTime">
+                     <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                     <operand localId="395" locator="261:55-261:59" name="Today" xsi:type="ParameterRef"/>
+                  </operand>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="412" locator="252:1-256:33" name="HIV Status" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="412">
+               <a:s>/*
+  @dataElement HIV Status observations of the patient most recent first
+*/
+define &quot;HIV Status&quot;:
+  </a:s>
+               <a:s r="411">
+                  <a:s r="409">
+                     <a:s r="408">
+                        <a:s>Last(
+    </a:s>
+                        <a:s r="407">
+                           <a:s>
+                              <a:s r="401">
+                                 <a:s r="400">
+                                    <a:s>
+                                       <a:s>&quot;HIV Status Observation&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> O</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      </a:s>
+                           <a:s r="406">
+                              <a:s>sort by </a:s>
+                              <a:s r="405">
+                                 <a:s r="404">
+                                    <a:s>start of </a:s>
+                                    <a:s r="403">
+                                       <a:s r="402">
+                                          <a:s>effective</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="403">
+                                          <a:s>toInterval()</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="409">
+                        <a:s>value</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> as </a:s>
+                  <a:s r="410">
+                     <a:s>FHIR.CodeableConcept</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="411" locator="253:3-256:33" strict="false" xsi:type="As">
+            <operand localId="409" locator="253:3-256:9" path="value" xsi:type="Property">
+               <source localId="408" locator="253:3-256:3" xsi:type="Last">
+                  <signature xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Observation" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <source localId="407" locator="254:5-255:45" xsi:type="Query">
+                     <source localId="401" locator="254:5-254:30" alias="O">
+                        <expression localId="400" locator="254:5-254:28" name="HIV Status Observation" xsi:type="ExpressionRef"/>
+                     </source>
+                     <sort localId="406" locator="255:7-255:45">
+                        <by localId="405" locator="255:15-255:45" direction="asc" xsi:type="ByExpression">
+                           <expression localId="404" locator="255:15-255:45" xsi:type="Start">
+                              <operand localId="403" locator="255:24-255:45" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                                 <operand localId="402" locator="255:24-255:32" name="effective" xsi:type="IdentifierRef"/>
+                              </operand>
+                           </expression>
+                        </by>
+                     </sort>
+                  </source>
+               </source>
+            </operand>
+            <asTypeSpecifier localId="410" locator="256:14-256:33" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+         </expression>
+      </def>
+      <def localId="421" locator="263:1-265:61" name="Live vaccine dose" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="421">
+               <a:s>define &quot;Live vaccine dose&quot;:
+  </a:s>
+               <a:s r="420">
+                  <a:s>
+                     <a:s r="414">
+                        <a:s r="413">
+                           <a:s>
+                              <a:s>Elements.&quot;Live vaccine dose&quot;</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s> V</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s>
+    </a:s>
+                  <a:s r="419">
+                     <a:s>where </a:s>
+                     <a:s r="419">
+                        <a:s r="417">
+                           <a:s r="416">
+                              <a:s r="415">
+                                 <a:s>V</a:s>
+                              </a:s>
+                              <a:s>.</a:s>
+                              <a:s r="416">
+                                 <a:s>occurrence</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>.</a:s>
+                           <a:s r="417">
+                              <a:s>toInterval()</a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s r="419"> starts on or before </a:s>
+                        <a:s r="418">
+                           <a:s>Today</a:s>
+                        </a:s>
+                     </a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="420" locator="264:3-265:61" xsi:type="Query">
+            <source localId="414" locator="264:3-264:32" alias="V">
+               <expression localId="413" locator="264:3-264:30" name="Live vaccine dose" libraryName="Elements" xsi:type="ExpressionRef"/>
+            </source>
+            <where localId="419" locator="265:5-265:61" xsi:type="SameOrBefore">
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+               <operand locator="265:37-265:42" xsi:type="Start">
+                  <operand localId="417" locator="265:11-265:35" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                     <operand localId="416" locator="265:11-265:22" path="occurrence" scope="V" xsi:type="Property"/>
+                  </operand>
+               </operand>
+               <operand xsi:type="ToDateTime">
+                  <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                  <operand localId="418" locator="265:57-265:61" name="Today" xsi:type="ParameterRef"/>
+               </operand>
+            </where>
+         </expression>
+      </def>
+      <def localId="424" locator="270:1-271:37" name="Live Attenuated Vaccines" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="424">
+               <a:s>/*
+  @dataElement Date and time of last live attenuated vaccine
+*/
+define &quot;Live Attenuated Vaccines&quot;:
+  </a:s>
+               <a:s r="423">
+                  <a:s r="422">
+                     <a:s>Elements</a:s>
+                  </a:s>
+                  <a:s>.</a:s>
+                  <a:s r="423">
+                     <a:s>&quot;Live Attenuated Vaccines&quot;</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="423" locator="271:3-271:37" name="Live Attenuated Vaccines" libraryName="Elements" xsi:type="ExpressionRef"/>
+      </def>
+      <def localId="442" locator="273:1-278:31" name="Date of Latest Live Attenuated Vaccine" context="Patient" accessLevel="Public">
+         <annotation xsi:type="a:Annotation">
+            <a:s r="442">
+               <a:s>define &quot;Date of Latest Live Attenuated Vaccine&quot;:
+  </a:s>
+               <a:s r="441">
+                  <a:s r="439">
+                     <a:s r="438">
+                        <a:s>Last(
+    </a:s>
+                        <a:s r="437">
+                           <a:s>
+                              <a:s r="426">
+                                 <a:s r="425">
+                                    <a:s>
+                                       <a:s>&quot;Live Attenuated Vaccines&quot;</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s> V</a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      </a:s>
+                           <a:s r="431">
+                              <a:s>where </a:s>
+                              <a:s r="431">
+                                 <a:s r="429">
+                                    <a:s r="428">
+                                       <a:s r="427">
+                                          <a:s>V</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="428">
+                                          <a:s>occurrence</a:s>
+                                       </a:s>
+                                    </a:s>
+                                    <a:s>.</a:s>
+                                    <a:s r="429">
+                                       <a:s>toInterval()</a:s>
+                                    </a:s>
+                                 </a:s>
+                                 <a:s r="431"> starts on or before </a:s>
+                                 <a:s r="430">
+                                    <a:s>Today</a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                           <a:s>
+      </a:s>
+                           <a:s r="436">
+                              <a:s>sort by </a:s>
+                              <a:s r="435">
+                                 <a:s r="434">
+                                    <a:s>start of </a:s>
+                                    <a:s r="433">
+                                       <a:s r="432">
+                                          <a:s>occurrence</a:s>
+                                       </a:s>
+                                       <a:s>.</a:s>
+                                       <a:s r="433">
+                                          <a:s>toInterval()</a:s>
+                                       </a:s>
+                                    </a:s>
+                                 </a:s>
+                              </a:s>
+                           </a:s>
+                        </a:s>
+                        <a:s>
+  )</a:s>
+                     </a:s>
+                     <a:s>.</a:s>
+                     <a:s r="439">
+                        <a:s>occurrence</a:s>
+                     </a:s>
+                  </a:s>
+                  <a:s> as </a:s>
+                  <a:s r="440">
+                     <a:s>FHIR.dateTime</a:s>
+                  </a:s>
+               </a:s>
+            </a:s>
+         </annotation>
+         <expression localId="441" locator="274:3-278:31" strict="false" xsi:type="As">
+            <operand localId="439" locator="274:3-278:14" path="occurrence" xsi:type="Property">
+               <source localId="438" locator="274:3-278:3" xsi:type="Last">
+                  <signature xsi:type="ListTypeSpecifier">
+                     <elementType name="fhir:Immunization" xsi:type="NamedTypeSpecifier"/>
+                  </signature>
+                  <source localId="437" locator="275:5-277:46" xsi:type="Query">
+                     <source localId="426" locator="275:5-275:32" alias="V">
+                        <expression localId="425" locator="275:5-275:30" name="Live Attenuated Vaccines" xsi:type="ExpressionRef"/>
+                     </source>
+                     <where localId="431" locator="276:7-276:63" xsi:type="SameOrBefore">
+                        <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        <signature name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+                        <operand locator="276:39-276:44" xsi:type="Start">
+                           <operand localId="429" locator="276:13-276:37" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                              <operand localId="428" locator="276:13-276:24" path="occurrence" scope="V" xsi:type="Property"/>
+                           </operand>
+                        </operand>
+                        <operand xsi:type="ToDateTime">
+                           <signature name="t:Date" xsi:type="NamedTypeSpecifier"/>
+                           <operand localId="430" locator="276:59-276:63" name="Today" xsi:type="ParameterRef"/>
+                        </operand>
+                     </where>
+                     <sort localId="436" locator="277:7-277:46">
+                        <by localId="435" locator="277:15-277:46" direction="asc" xsi:type="ByExpression">
+                           <expression localId="434" locator="277:15-277:46" xsi:type="Start">
+                              <operand localId="433" locator="277:24-277:46" name="toInterval" libraryName="WC" xsi:type="FunctionRef">
+                                 <operand localId="432" locator="277:24-277:33" name="occurrence" xsi:type="IdentifierRef"/>
+                              </operand>
+                           </expression>
+                        </by>
+                     </sort>
+                  </source>
+               </source>
+            </operand>
+            <asTypeSpecifier localId="440" locator="278:19-278:31" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+         </expression>
+      </def>
+   </statements>
+</library>

@@ -1,0 +1,191 @@
+[
+  {
+    "id" : "ICD11",
+    "type" : "CodeSystem",
+    "url" : "http://id.who.int/icd/release/11/mms",
+    "version" : "0.1.0",
+    "name" : "ICD11"
+  },
+  {
+    "id" : "IMMZConcepts",
+    "type" : "CodeSystem",
+    "url" : "http://smart.who.int/example-workshop/CodeSystem/IMMZConcepts",
+    "version" : "0.1.0",
+    "name" : "IMMZConcepts"
+  },
+  {
+    "id" : "VaccineProducts",
+    "type" : "CodeSystem",
+    "url" : "http://smart.who.int/example-workshop/CodeSystem/VaccineProducts",
+    "version" : "0.1.0",
+    "name" : "VaccineProducts"
+  },
+  {
+    "id" : "IMMZConceptsToAdministrativeGender",
+    "type" : "ConceptMap",
+    "url" : "http://smart.who.int/example-workshop/ConceptMap/IMMZConceptsToAdministrativeGender",
+    "version" : "0.1.0",
+    "name" : "IMMZConceptsToAdministrativeGender"
+  },
+  {
+    "id" : "IMMZConceptsToICD11",
+    "type" : "ConceptMap",
+    "url" : "http://smart.who.int/example-workshop/ConceptMap/IMMZConceptsToICD11",
+    "version" : "0.1.0",
+    "name" : "IMMZConceptsToICD11"
+  },
+  {
+    "id" : "IMMZConceptsToLOINC",
+    "type" : "ConceptMap",
+    "url" : "http://smart.who.int/example-workshop/ConceptMap/IMMZConceptsToLOINC",
+    "version" : "0.1.0",
+    "name" : "IMMZConceptsToLOINC"
+  },
+  {
+    "id" : "IMMZConceptsToSNOMED",
+    "type" : "ConceptMap",
+    "url" : "http://smart.who.int/example-workshop/ConceptMap/IMMZConceptsToSNOMED",
+    "version" : "0.1.0",
+    "name" : "IMMZConceptsToSNOMED"
+  },
+  {
+    "id" : "smart.who.int.example-workshop",
+    "type" : "ImplementationGuide",
+    "url" : "http://smart.who.int/example-workshop/ImplementationGuide/smart.who.int.example-workshop",
+    "version" : "0.1.0",
+    "name" : "ExampleWorkshop"
+  },
+  {
+    "id" : "ARVDrugs-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/ARVDrugs-values",
+    "version" : "0.1.0",
+    "name" : "ARVDrugsvalues"
+  },
+  {
+    "id" : "AllVaccineTypes",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/AllVaccineTypes",
+    "version" : "0.1.0",
+    "name" : "AllVaccineTypes"
+  },
+  {
+    "id" : "Birthweight-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/Birthweight-values",
+    "version" : "0.1.0",
+    "name" : "Birthweightvalues"
+  },
+  {
+    "id" : "HIVstatus-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/HIVstatus-values",
+    "version" : "0.1.0",
+    "name" : "HIVstatusvalues"
+  },
+  {
+    "id" : "IMMZ.C.DE5",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.C.DE5",
+    "version" : "0.1.0",
+    "name" : "IMMZ_C_DE5"
+  },
+  {
+    "id" : "IMMZ.D1.DE10",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.D1.DE10",
+    "version" : "0.1.0",
+    "name" : "IMMZ_D1_DE10"
+  },
+  {
+    "id" : "IMMZ.D1.DE1VS",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.D1.DE1VS",
+    "version" : "0.1.0",
+    "name" : "IMMZD1DE1VS"
+  },
+  {
+    "id" : "IMMZ.D1.DE5VS",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.D1.DE5VS",
+    "version" : "0.1.0",
+    "name" : "IMMZD1DE5VS"
+  },
+  {
+    "id" : "IMMZ.D4.DE161",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.D4.DE161",
+    "version" : "0.1.0",
+    "name" : "IMMZ_D4_DE161"
+  },
+  {
+    "id" : "IMMZ.Z.DE9",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/IMMZ.Z.DE9",
+    "version" : "0.1.0",
+    "name" : "IMMZZDE9"
+  },
+  {
+    "id" : "Immunocompromised-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/Immunocompromised-values",
+    "version" : "0.1.0",
+    "name" : "Immunocompromisedvalues"
+  },
+  {
+    "id" : "LiveAttenuatedVaccines",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/LiveAttenuatedVaccines",
+    "version" : "0.1.0",
+    "name" : "LiveAttenuatedVaccines"
+  },
+  {
+    "id" : "Negativetestresult-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/Negativetestresult-values",
+    "version" : "0.1.0",
+    "name" : "Negativetestresultvalues"
+  },
+  {
+    "id" : "PositiveTestResult-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/PositiveTestResult-values",
+    "version" : "0.1.0",
+    "name" : "PositiveTestResultvalues"
+  },
+  {
+    "id" : "SGImmunizationStatusCodes",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/SGImmunizationStatusCodes",
+    "version" : "0.1.0",
+    "name" : "SGImmunizationStatusCodes"
+  },
+  {
+    "id" : "VSMeaslesVaccineProducts",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/VSMeaslesVaccineProducts",
+    "version" : "0.1.0",
+    "name" : "VSMeaslesVaccineProducts"
+  },
+  {
+    "id" : "VaccineTypes",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/VaccineTypes",
+    "version" : "0.1.0",
+    "name" : "VaccineTypes"
+  },
+  {
+    "id" : "pregnancystatus-values",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/pregnancystatus-values",
+    "version" : "0.1.0",
+    "name" : "PregnancyStatusValues"
+  },
+  {
+    "id" : "sgcountry",
+    "type" : "ValueSet",
+    "url" : "http://smart.who.int/example-workshop/ValueSet/sgcountry",
+    "version" : "0.1.0",
+    "name" : "SGCountryValueSet"
+  }
+]
